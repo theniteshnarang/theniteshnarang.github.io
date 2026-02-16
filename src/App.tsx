@@ -136,7 +136,7 @@ export default function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (id) => {
+  const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -144,7 +144,7 @@ export default function App() {
     }
   };
 
-  const NavLink = ({ id, label }) => (
+  const NavLink = ({ id, label }: { id: string; label: string }) => (
     <button
       onClick={() => scrollToSection(id)}
       className={`text-sm font-medium transition-colors hover:text-blue-400 ${
