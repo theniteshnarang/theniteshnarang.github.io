@@ -120,18 +120,34 @@ const SCHOOL_PROJECTS = [
   {
     title: "Element Design",
     description:
-      "A UI component library built with React and Tailwind CSS to get the design sense of a component library.",
-    tags: ["HTML", "CSS", "JavaScript"],
+      "A component library built from scratch to learn UI patterns and fundamental design principles.",
+    tags: ["HTML", "CSS", "JS"],
     link: "https://element-design.netlify.app/",
     color: "bg-blue-500",
   },
   {
-    title: "Moonshine",
+    title: "Geeky Basket",
     description:
-      "A static web page to get the design sense of a landing page. Focused on clean UI and smooth animations.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    link: "https://nitproject3.netlify.app/",
+      "A full stack web application to learn e-commerce architecture and system design.",
+    tags: ["Element Design", "React", "Redux", "Node.js", "MongoDB"],
+    link: "https://geeky-basket.netlify.app",
+    color: "bg-indigo-500",
+  },
+  {
+    title: "Geeky Talks",
+    description:
+      "A YouTube design clone targeted at geeky customers, built to master full stack development and complex UI design.",
+    tags: ["Element Design", "React", "Redux", "Node.js", "MongoDB"],
+    link: "https://geeky-talks.netlify.app",
     color: "bg-purple-500",
+  },
+  {
+    title: "Animated Dummy Portfolio",
+    description:
+      "A visually engaging portfolio project created specifically to learn and implement GSAP animations.",
+    tags: ["GSAP", "Animations", "Frontend"],
+    link: "https://nitproject4.netlify.app/",
+    color: "bg-pink-500",
   },
 ];
 
@@ -289,7 +305,7 @@ export default function App() {
             <span className="text-blue-400 font-mono text-xl">01.</span> About
             Me
           </h2>
-          <div className="h-px bg-slate-700 flex-grow max-w-xs"></div>
+          <div className="h-px bg-slate-700 grow max-w-xs"></div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-12 items-start">
@@ -331,7 +347,7 @@ export default function App() {
           </div>
 
           {/* Professional Photo Container */}
-          <div className="relative group mx-auto w-64 md:w-full max-w-xs sticky top-24">
+          <div className="sticky group mx-auto w-64 md:w-full max-w-xs top-24">
             <div className="absolute inset-0 bg-blue-400 rounded-lg translate-x-3 translate-y-3 transition-transform duration-300 group-hover:translate-x-2 group-hover:translate-y-2"></div>
             <div className="relative rounded-lg overflow-hidden border border-slate-700 bg-slate-800 aspect-square shadow-xl">
               <img
@@ -355,7 +371,7 @@ export default function App() {
             <span className="text-blue-400 font-mono text-xl">02.</span> Where
             I've Worked
           </h2>
-          <div className="h-px bg-slate-700 flex-grow max-w-xs"></div>
+          <div className="h-px bg-slate-700 grow max-w-xs"></div>
         </div>
 
         <div className="space-y-8">
@@ -392,7 +408,7 @@ export default function App() {
             <span className="text-blue-400 font-mono text-xl">03.</span>{" "}
             Projects
           </h2>
-          <div className="h-px bg-slate-700 flex-grow max-w-xs"></div>
+          <div className="h-px bg-slate-700 grow max-w-xs"></div>
         </div>
 
         {/* Category: School Projects */}
