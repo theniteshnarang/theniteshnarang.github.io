@@ -11,40 +11,59 @@ import {
   Cpu,
   Globe,
   MapPin,
+  FileText,
+  Download,
+  MessageCircle,
+  Zap,
+  Layout,
+  TrendingUp,
 } from "lucide-react";
 
 // --- PERSONAL DATA FROM RESUME ---
 const PERSONAL_INFO = {
   name: "Nitesh Narang",
-  title: "Product Engineer | Frontend Architect",
+  title: "Founder's Office | Product Engineer",
   tagline:
-    "Bridging technical depth with business outcomes—driving product decisions from tech to sales.",
+    "Bridging technical depth with business outcomes — driving product decisions from tech to sales POV.",
   about:
-    "I am a Product Engineer based in Ahmedabad, India, with a focus on high-efficiency web apps and scalable SaaS modules. I specialize in architecting complex dashboards, optimizing core web vitals, and leading full-lifecycle development. My experience ranges from healthtech to email outreach platforms, consistently reducing operational costs and improving user engagement through clean, modular code.",
+    "I am a Product Engineer bridging technical depth with business strategy. I architect high-efficiency SaaS that align with sales goals. My focus is on optimizing core web vitals and building modular, scalable systems that drive real business growth.",
   email: "pnnarang9@gmail.com",
+  phone: "9106857146",
+  whatsapp: "https://wa.me/919106857146",
   location: "Ahmedabad, India",
   github: "https://github.com/theniteshnarang",
   linkedin: "https://linkedin.com/in/theniteshnarang",
-  // Updated to point to your new local file. Ensure this file is in your public folder.
   photo: "./niteshprofile.png",
+  resumeLink: "./Nitesh Narang Resume.pdf", // Placeholder path to the file
 };
 
+const HIGHLIGHTS = [
+  { label: "Scalable Architecture", icon: <Layout size={14} /> },
+  { label: "Business Strategy", icon: <TrendingUp size={14} /> },
+  { label: "Performance Optimization", icon: <Zap size={14} /> },
+];
+
 const SKILLS = [
-  "NextJS",
-  "ReactJS",
-  "TypeScript",
   "Node.js",
-  "NestJS",
+  "JavaScript",
+  "TypeScript",
   "MongoDB",
   "MySQL",
+  "HTML5",
+  "CSS3",
+  "NextJS",
+  "ReactJS",
   "Zustand",
   "Redux",
-  "Tailwind CSS",
   "Shadcn UI",
+  "Material UI",
+  "Tailwind CSS",
+  "Webpack",
+  "NestJS",
   "Firebase",
   "Vercel",
   "Netlify",
-  "Git",
+  "Git Control",
 ];
 
 const EXPERIENCE = [
@@ -52,62 +71,65 @@ const EXPERIENCE = [
     company: "Novocuris (Contract)",
     role: "Frontend Architect",
     period: "Mar 2025 - Sep 2025",
-    description:
-      "Architected an admin dashboard used in 25 overseas hospitals. Led full lifecycle development including white-label theming and patient management. Developed modular components reducing UI dev time by 50% and achieved 90% Core Web Vitals.",
+    points: [
+      "Architected admin dashboard used by 2500+ patients across 30+ countries.",
+      "Led full lifecycle: white-labeling, patient management, and role-based access.",
+      "Reduced UI dev time by 50% via modular components, achieving 90% Core Web Vitals.",
+    ],
   },
   {
     company: "Crework Labs (Contract)",
     role: "Full Stack Engineer",
     period: "Oct 2024 - Feb 2025",
-    description:
-      "Delivered core SaaS modules for email outreach to 1,000+ users. Implemented auth and Gmail consent workflows. Developed REST APIs for Campaigns/Investors, reducing manual setup time by 70%.",
+    points: [
+      "Built SaaS modules enabling email outreach for 500+ users.",
+      "Implemented secure authentication and gmail consent workflows.",
+      "Developed REST APIs for Campaigns, reducing manual setup time by 50%.",
+    ],
   },
   {
     company: "Alyve Health",
     role: "Frontend Engineer",
     period: "Nov 2021 - Apr 2024",
-    description:
-      "Led frontend for Alyve App 2.0 (10k+ users). Engineered Diagnostic & Reimbursement 2.0 modules using TypeScript. Integrated SDK APIs for real-time vitals, improving analytics accuracy by 20%. Streamlined order management workflows.",
+    points: [
+      "Led frontend for App 2.0 (10k+ users) and Admin Dashboard (100+ clients).",
+      "Engineered bug-free Diagnostic & Reimbursement modules using TypeScript.",
+      "Automated endorsements (25% faster) and order workflows (30% faster).",
+      "Integrated health SDKs improving analytics accuracy by 20%.",
+    ],
   },
   {
     company: "Neog.camp",
     role: "Teaching Assistant",
     period: "Feb 2021 - Aug 2021",
-    description:
-      "Led a 17-person team, improving project delivery speed by 10% and increasing member retention by 15%.",
+    points: ["Led a 17-person team, improving delivery speed by 10%."],
   },
   {
     company: "Tech-Receptives Solutions",
     role: "Intern Application Engineer",
     period: "Nov 2020 - Mar 2021",
-    description:
-      "Built wishlist and cart modules increasing user engagement. Implemented dynamic product/category pages, boosting page views by 30%.",
+    points: [
+      "Built wishlist and cart modules to drive user engagement.",
+      "Optimized dynamic product pages, boosting page views by 30%.",
+    ],
   },
 ];
 
 // --- PROJECT DATA ---
 const SCHOOL_PROJECTS = [
   {
-    title: "NIT Project 1",
+    title: "Element Design",
     description:
-      "A comprehensive web application developed during university studies. Features responsive design and interactive elements.",
-    tags: ["React", "Netlify", "Web Dev"],
-    link: "https://nitproject1.netlify.app/",
+      "A UI component library built with React and Tailwind CSS to get the design sense of a component library.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    link: "https://element-design.netlify.app/",
     color: "bg-blue-500",
   },
   {
-    title: "NIT Project 2",
+    title: "Moonshine",
     description:
-      "An academic project focusing on frontend performance and accessibility. Deployed for public access.",
-    tags: ["JavaScript", "CSS", "Frontend"],
-    link: "https://nitproject2.netlify.app/",
-    color: "bg-indigo-500",
-  },
-  {
-    title: "NIT Project 3",
-    description:
-      "A full-stack prototype demonstrating core CRUD operations and state management concepts.",
-    tags: ["Node.js", "Database", "API"],
+      "A static web page to get the design sense of a landing page. Focused on clean UI and smooth animations.",
+    tags: ["HTML", "CSS", "JavaScript"],
     link: "https://nitproject3.netlify.app/",
     color: "bg-purple-500",
   },
@@ -123,6 +145,27 @@ const OTHER_PROJECTS = [
     color: "bg-emerald-500",
   },
 ];
+
+const NavLink = ({
+  id,
+  label,
+  activeSection,
+  scrollToSection,
+}: {
+  id: string;
+  label: string;
+  activeSection: string;
+  scrollToSection: (id: string) => void;
+}) => (
+  <button
+    onClick={() => scrollToSection(id)}
+    className={`text-sm font-medium transition-colors hover:text-blue-400 ${
+      activeSection === id ? "text-blue-400" : "text-slate-400"
+    }`}
+  >
+    {label}
+  </button>
+);
 
 export default function App() {
   const [activeSection, setActiveSection] = useState("home");
@@ -144,17 +187,6 @@ export default function App() {
     }
   };
 
-  const NavLink = ({ id, label }: { id: string; label: string }) => (
-    <button
-      onClick={() => scrollToSection(id)}
-      className={`text-sm font-medium transition-colors hover:text-blue-400 ${
-        activeSection === id ? "text-blue-400" : "text-slate-400"
-      }`}
-    >
-      {label}
-    </button>
-  );
-
   return (
     <div className="min-h-screen bg-slate-900 text-slate-200 font-sans selection:bg-blue-500/30">
       {/* Navigation */}
@@ -170,11 +202,44 @@ export default function App() {
             <Terminal size={24} className="text-blue-400" />
             <span>{PERSONAL_INFO.name}</span>
           </div>
-          <div className="hidden md:flex gap-8">
-            <NavLink id="about" label="About" />
-            <NavLink id="experience" label="Experience" />
-            <NavLink id="projects" label="Projects" />
-            <NavLink id="contact" label="Contact" />
+
+          <div className="flex items-center gap-8">
+            <div className="hidden md:flex gap-8">
+              <NavLink
+                id="about"
+                label="About"
+                activeSection={activeSection}
+                scrollToSection={scrollToSection}
+              />
+              <NavLink
+                id="experience"
+                label="Experience"
+                activeSection={activeSection}
+                scrollToSection={scrollToSection}
+              />
+              <NavLink
+                id="projects"
+                label="Projects"
+                activeSection={activeSection}
+                scrollToSection={scrollToSection}
+              />
+              <NavLink
+                id="contact"
+                label="Contact"
+                activeSection={activeSection}
+                scrollToSection={scrollToSection}
+              />
+            </div>
+
+            <a
+              href={PERSONAL_INFO.resumeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-400 border border-blue-400 rounded hover:bg-blue-400/10 transition-colors"
+            >
+              <FileText size={16} />
+              <span>Resume</span>
+            </a>
           </div>
         </div>
       </nav>
@@ -189,16 +254,16 @@ export default function App() {
           <h1 className="text-5xl md:text-7xl font-bold text-slate-100 tracking-tight">
             {PERSONAL_INFO.name}.
           </h1>
-          <h2 className="text-4xl md:text-6xl font-bold text-slate-400 tracking-tight">
+          <h2 className="text-4xl md:text-nowrap md:text-6xl font-bold text-slate-400 tracking-tight">
             {PERSONAL_INFO.title}.
           </h2>
-          <p className="text-lg text-slate-400 max-w-xl leading-relaxed">
+          <p className="text-lg md:text-nowrap text-slate-400 max-w-xl leading-relaxed">
             {PERSONAL_INFO.tagline}
           </p>
 
           <div className="flex gap-4 pt-4">
             <button
-              onClick={() => scrollToSection("projects")}
+              onClick={() => scrollToSection("experience")}
               className="px-6 py-3 border border-blue-400 text-blue-400 rounded hover:bg-blue-400/10 transition-colors font-medium"
             >
               Check out my work
@@ -228,38 +293,52 @@ export default function App() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-12 items-start">
-          <div className="md:col-span-2 space-y-4 text-slate-400 leading-relaxed">
-            <p>{PERSONAL_INFO.about}</p>
-            <div className="flex items-center gap-2 text-slate-400 pt-2">
-              <MapPin size={16} className="text-blue-400" />
+          <div className="md:col-span-2 space-y-6">
+            <div className="text-slate-400 text-lg leading-relaxed">
+              <p>{PERSONAL_INFO.about}</p>
+            </div>
+
+            {/* Highlights Grid */}
+            <div className="flex flex-wrap gap-3">
+              {HIGHLIGHTS.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center gap-2 bg-slate-800/50 border border-slate-700 px-3 py-1.5 rounded-full text-blue-300 text-sm"
+                >
+                  {item.icon}
+                  <span>{item.label}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex items-center gap-2 text-slate-500 text-sm pt-2">
+              <MapPin size={14} className="text-blue-400" />
               <span>{PERSONAL_INFO.location}</span>
             </div>
 
-            <p className="pt-4 font-medium text-slate-200">
-              Here are a few technologies I've been working with:
-            </p>
-            <ul className="grid grid-cols-2 gap-2 text-sm font-mono mt-2">
-              {SKILLS.map((skill, i) => (
-                <li key={i} className="flex items-center gap-2">
-                  <span className="text-blue-400">▹</span> {skill}
-                </li>
-              ))}
-            </ul>
+            <div className="pt-4">
+              <p className="font-medium text-slate-200 mb-3">
+                Technologies I work with:
+              </p>
+              <ul className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm font-mono text-slate-400">
+                {SKILLS.map((skill, i) => (
+                  <li key={i} className="flex items-center gap-2">
+                    <span className="text-blue-400">▹</span> {skill}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Professional Photo Container */}
-          <div className="relative group mx-auto w-64 md:w-full max-w-xs">
-            {/* Background decorative offset frame */}
+          <div className="relative group mx-auto w-64 md:w-full max-w-xs sticky top-24">
             <div className="absolute inset-0 bg-blue-400 rounded-lg translate-x-3 translate-y-3 transition-transform duration-300 group-hover:translate-x-2 group-hover:translate-y-2"></div>
-
-            {/* Image Container */}
             <div className="relative rounded-lg overflow-hidden border border-slate-700 bg-slate-800 aspect-square shadow-xl">
               <img
                 src={PERSONAL_INFO.photo}
                 alt={PERSONAL_INFO.name}
                 className="w-full h-full object-cover object-top filter grayscale hover:grayscale-0 transition-all duration-500 ease-in-out cursor-pointer"
               />
-              {/* Optional overlay for tinting if desired */}
               <div className="absolute inset-0 bg-blue-500/10 group-hover:bg-transparent transition-colors duration-300 pointer-events-none"></div>
             </div>
           </div>
@@ -293,7 +372,14 @@ export default function App() {
               <p className="font-mono text-sm text-slate-500 mb-4">
                 {job.period}
               </p>
-              <p className="text-slate-400 max-w-2xl">{job.description}</p>
+
+              <ul className="list-disc list-outside ml-4 space-y-2 text-slate-400 max-w-2xl">
+                {job.points.map((point, i) => (
+                  <li key={i} className="pl-2 leading-relaxed">
+                    {point}
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
@@ -313,9 +399,7 @@ export default function App() {
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-8">
             <GraduationCap className="text-blue-400" size={24} />
-            <h3 className="text-xl font-bold text-slate-200">
-              School Time Projects
-            </h3>
+            <h3 className="text-xl font-bold text-slate-200">School</h3>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -367,7 +451,7 @@ export default function App() {
         <div>
           <div className="flex items-center gap-3 mb-8">
             <Cpu className="text-emerald-400" size={24} />
-            <h3 className="text-xl font-bold text-slate-200">Other Projects</h3>
+            <h3 className="text-xl font-bold text-slate-200">Other</h3>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {OTHER_PROJECTS.map((project, idx) => (
@@ -428,12 +512,14 @@ export default function App() {
         <div className="flex justify-center gap-6 mb-12">
           <a
             href={PERSONAL_INFO.github}
+            target="_blank"
             className="text-slate-400 hover:text-blue-400 transition-colors"
           >
             <Github size={24} />
           </a>
           <a
             href={PERSONAL_INFO.linkedin}
+            target="_blank"
             className="text-slate-400 hover:text-blue-400 transition-colors"
           >
             <Linkedin size={24} />
@@ -444,18 +530,37 @@ export default function App() {
           >
             <Mail size={24} />
           </a>
+          <a
+            href={PERSONAL_INFO.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-400 hover:text-green-500 transition-colors"
+          >
+            <MessageCircle size={24} />
+          </a>
         </div>
 
-        <a
-          href={`mailto:${PERSONAL_INFO.email}`}
-          className="inline-block px-8 py-4 border border-blue-400 text-blue-400 rounded hover:bg-blue-400/10 transition-colors font-medium text-lg"
-        >
-          Say Hello
-        </a>
+        <div className="flex flex-col items-center gap-4">
+          <a
+            href={`mailto:${PERSONAL_INFO.email}`}
+            className="inline-block px-8 py-4 border border-blue-400 text-blue-400 rounded hover:bg-blue-400/10 transition-colors font-medium text-lg"
+          >
+            Say Hello
+          </a>
+
+          <a
+            href={PERSONAL_INFO.resumeLink}
+            download
+            className="flex items-center gap-2 text-slate-500 hover:text-blue-400 transition-colors text-sm"
+          >
+            <Download size={16} />
+            Download Resume
+          </a>
+        </div>
       </section>
 
       <footer className="py-6 text-center text-slate-500 text-sm font-mono">
-        <p>Designed & Built by {PERSONAL_INFO.name}</p>
+        <p>Designed & Built by {PERSONAL_INFO.name} with ❤️</p>
       </footer>
     </div>
   );
