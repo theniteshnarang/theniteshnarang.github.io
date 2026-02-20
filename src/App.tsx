@@ -3,13 +3,8 @@ import {
   Github,
   Linkedin,
   Mail,
-  ExternalLink,
-  Code,
-  GraduationCap,
   ChevronDown,
   Terminal,
-  Cpu,
-  Globe,
   MapPin,
   FileText,
   Download,
@@ -17,17 +12,18 @@ import {
   Zap,
   Layout,
   TrendingUp,
+  BookOpen,
 } from "lucide-react";
 
 // --- PERSONAL DATA FROM RESUME ---
 const PERSONAL_INFO = {
   name: "Nitesh Narang",
-  title: "Founder's Office | Product Engineer",
+  title: "Product Engineer → Founder's Office",
   tagline:
-    "Bridging technical depth with business outcomes — driving product decisions from tech to sales POV.",
+    "I've shipped products used by 10k+ users. Now I want to know why they stayed — and what made them pay.",
   about:
-    "I am a Product Engineer bridging technical depth with business strategy. I architect high-efficiency SaaS that align with sales goals. My focus is on optimizing core web vitals and building modular, scalable systems that drive real business growth.",
-  email: "pnnarang9@gmail.com",
+    "After 4+ years of building scalable SaaS products as a software engineer, I'm now stepping into a Founder's Office role — bringing an engineer's rigour to business strategy, growth, and operations. I've led frontend architecture for platforms serving thousands of users across healthcare and EdTech, and am now channelling that systems-thinking into how products are built, positioned, and grown. I thrive at the intersection of technical depth and business outcomes — translating between what's possible and what's profitable.",
+  email: "narangnitesh@ymail.com",
   phone: "9106857146",
   whatsapp: "https://wa.me/919106857146",
   location: "Ahmedabad, India",
@@ -38,43 +34,49 @@ const PERSONAL_INFO = {
 };
 
 const HIGHLIGHTS = [
-  { label: "Scalable Architecture", icon: <Layout size={14} /> },
+  { label: "Product Thinking", icon: <Layout size={14} /> },
   { label: "Business Strategy", icon: <TrendingUp size={14} /> },
-  { label: "Performance Optimization", icon: <Zap size={14} /> },
+  { label: "Technical Depth", icon: <Zap size={14} /> },
 ];
 
-const SKILLS = [
-  "Node.js",
-  "JavaScript",
+const TECH_SKILLS = [
+  "React / Next.js",
+  "Node.js / NestJS",
   "TypeScript",
-  "MongoDB",
-  "MySQL",
-  "HTML5",
-  "CSS3",
-  "NextJS",
-  "ReactJS",
-  "Zustand",
-  "Redux",
-  "Shadcn UI",
-  "Material UI",
-  "Tailwind CSS",
-  "Webpack",
-  "NestJS",
+  "MongoDB / MySQL",
+  "REST APIs",
   "Firebase",
-  "Vercel",
-  "Netlify",
-  "Git Control",
+];
+
+const PRODUCT_SKILLS = [
+  "Product Scoping",
+  "GTM Strategy",
+  "Systems Thinking",
+  "User Research",
+  "Analytics & Metrics",
+  "Sales Enablement",
 ];
 
 const EXPERIENCE = [
+  {
+    company: "Independent",
+    role: "Product Builder & Founder's Office Candidate",
+    period: "Oct 2025 - Present",
+    points: [
+      "Spent extensive time in R&D across product domains — a deliberate deep-dive that sharpened product intuition but reinforced the need to ship over research.",
+      "Currently building AutoDraft — a product for advocates to streamline legal drafting workflows (auto-draft-product-page.vercel.app).",
+      "Exploring multiple product ideas at the ideation stage, validating problem spaces across legal-tech, productivity, and SaaS.",
+      "Actively pursuing Founder's Office roles to apply this product-building mindset within a high-growth startup.",
+    ],
+  },
   {
     company: "Novocuris (Contract)",
     role: "Frontend Architect",
     period: "Mar 2025 - Sep 2025",
     points: [
-      "Architected admin dashboard used by 2500+ patients across 30+ countries.",
-      "Led full lifecycle: white-labeling, patient management, and role-based access.",
-      "Reduced UI dev time by 50% via modular components, achieving 90% Core Web Vitals.",
+      "Owned the full product lifecycle of a healthcare dashboard — from scoping to delivery — serving 2500+ patients across 30+ countries.",
+      "Drove white-labeling strategy, enabling faster enterprise client onboarding across multiple geographies.",
+      "Cut UI development time by 50% through modular architecture, directly accelerating the sales cycle for new white-label clients.",
     ],
   },
   {
@@ -82,9 +84,9 @@ const EXPERIENCE = [
     role: "Full Stack Engineer",
     period: "Oct 2024 - Feb 2025",
     points: [
-      "Built SaaS modules enabling email outreach for 500+ users.",
-      "Implemented secure authentication and gmail consent workflows.",
-      "Developed REST APIs for Campaigns, reducing manual setup time by 50%.",
+      "Owned the build of SaaS email outreach modules used by 500+ users from day one.",
+      "Engineered secure Gmail consent and authentication flows, reducing onboarding friction for new users.",
+      "Designed and shipped Campaign REST APIs, cutting manual client setup time by 50%.",
     ],
   },
   {
@@ -92,75 +94,97 @@ const EXPERIENCE = [
     role: "Frontend Engineer",
     period: "Nov 2021 - Apr 2024",
     points: [
-      "Led frontend for App 2.0 (10k+ users) and Admin Dashboard (100+ clients).",
-      "Engineered bug-free Diagnostic & Reimbursement modules using TypeScript.",
-      "Automated endorsements (25% faster) and order workflows (30% faster).",
-      "Integrated health SDKs improving analytics accuracy by 20%.",
+      "Owned the frontend for App 2.0 (10k+ users) and the Admin Dashboard serving 100+ enterprise clients.",
+      "Independently architected and shipped Diagnostic & Reimbursement modules with zero post-launch regressions.",
+      "Automated endorsement and order workflows, improving operational speed by 25–30% and freeing team bandwidth.",
+      "Integrated health SDKs, improving analytics accuracy by 20% and directly informing product decisions.",
     ],
   },
   {
     company: "Neog.camp",
     role: "Teaching Assistant",
     period: "Feb 2021 - Aug 2021",
-    points: ["Led a 17-person team, improving delivery speed by 10%."],
+    points: [
+      "Managed a 17-person cohort, owning delivery pipeline and improving throughput by 10%.",
+    ],
   },
   {
     company: "Tech-Receptives Solutions",
     role: "Intern Application Engineer",
     period: "Nov 2020 - Mar 2021",
     points: [
-      "Built wishlist and cart modules to drive user engagement.",
-      "Optimized dynamic product pages, boosting page views by 30%.",
+      "Built wishlist and cart modules, contributing directly to user engagement.",
+      "Optimised dynamic product pages, boosting page views by 30%.",
     ],
   },
 ];
 
-// --- PROJECT DATA ---
-const SCHOOL_PROJECTS = [
+const CASE_STUDIES = [
   {
-    title: "Element Design",
-    description:
-      "A component library built from scratch to learn UI patterns and fundamental design principles.",
-    tags: ["HTML", "CSS", "JS"],
-    link: "https://element-design.netlify.app/",
-    color: "bg-blue-500",
-  },
-  {
-    title: "Geeky Basket",
-    description:
-      "A full stack web application to learn e-commerce architecture and system design.",
-    tags: ["Element Design", "React", "Redux", "Node.js", "MongoDB"],
-    link: "https://geeky-basket.netlify.app",
-    color: "bg-indigo-500",
-  },
-  {
-    title: "Geeky Talks",
-    description:
-      "A YouTube design clone targeted at geeky customers, built to master full stack development and complex UI design.",
-    tags: ["Element Design", "React", "Redux", "Node.js", "MongoDB"],
-    link: "https://geeky-talks.netlify.app",
-    color: "bg-purple-500",
-  },
-  {
-    title: "Animated Dummy Portfolio",
-    description:
-      "A visually engaging portfolio project created specifically to learn and implement GSAP animations.",
-    tags: ["GSAP", "Animations", "Frontend"],
-    link: "https://nitproject4.netlify.app/",
-    color: "bg-pink-500",
+    title: "Scaling a Healthcare Dashboard Across 30+ Countries",
+    company: "Novocuris",
+    period: "Mar 2025 – Sep 2025",
+    problem:
+      "A growing healthtech platform needed a multi-tenant admin dashboard that could be white-labeled for enterprise clients across 30+ countries — with zero per-client engineering re-work.",
+    decision:
+      "I proposed and owned a white-labeling architecture using config-driven theming and role-based access controls. Rather than building per-client, we built once and deployed everywhere.",
+    outcome:
+      "Served 2500+ patients across 30+ countries. Reduced UI development time by 50%. Achieved 90% Core Web Vitals. Enterprise client onboarding shrunk from weeks to days.",
+    tags: [
+      "Product Architecture",
+      "White-labeling",
+      "Healthcare",
+      "Enterprise SaaS",
+    ],
   },
 ];
 
-const OTHER_PROJECTS = [
-  {
-    title: "Personal Portfolio V1",
-    description:
-      "The first iteration of my personal website built with HTML/CSS.",
-    tags: ["HTML", "CSS"],
-    link: "https://niteshnarang.netlify.app/",
-    color: "bg-emerald-500",
-  },
-];
+// // --- PROJECT DATA ---
+// const SCHOOL_PROJECTS = [
+//   {
+//     title: "Element Design",
+//     description:
+//       "A component library built from scratch to learn UI patterns and fundamental design principles.",
+//     tags: ["HTML", "CSS", "JS"],
+//     link: "https://element-design.netlify.app/",
+//     color: "bg-blue-500",
+//   },
+//   {
+//     title: "Geeky Basket",
+//     description:
+//       "A full stack web application to learn e-commerce architecture and system design.",
+//     tags: ["Element Design", "React", "Redux", "Node.js", "MongoDB"],
+//     link: "https://geeky-basket.netlify.app",
+//     color: "bg-indigo-500",
+//   },
+//   {
+//     title: "Geeky Talks",
+//     description:
+//       "A YouTube design clone targeted at geeky customers, built to master full stack development and complex UI design.",
+//     tags: ["Element Design", "React", "Redux", "Node.js", "MongoDB"],
+//     link: "https://geeky-talks.netlify.app",
+//     color: "bg-purple-500",
+//   },
+//   {
+//     title: "Animated Dummy Portfolio",
+//     description:
+//       "A visually engaging portfolio project created specifically to learn and implement GSAP animations.",
+//     tags: ["GSAP", "Animations", "Frontend"],
+//     link: "https://nitproject4.netlify.app/",
+//     color: "bg-pink-500",
+//   },
+// ];
+
+// const OTHER_PROJECTS = [
+//   {
+//     title: "Personal Portfolio V1",
+//     description:
+//       "The first iteration of my personal website built with HTML/CSS.",
+//     tags: ["HTML", "CSS"],
+//     link: "https://niteshnarang.netlify.app/",
+//     color: "bg-emerald-500",
+//   },
+// ];
 
 const NavLink = ({
   id,
@@ -234,8 +258,8 @@ export default function App() {
                 scrollToSection={scrollToSection}
               />
               <NavLink
-                id="projects"
-                label="Projects"
+                id="casestudies"
+                label="Case Studies"
                 activeSection={activeSection}
                 scrollToSection={scrollToSection}
               />
@@ -332,17 +356,29 @@ export default function App() {
               <span>{PERSONAL_INFO.location}</span>
             </div>
 
-            <div className="pt-4">
-              <p className="font-medium text-slate-200 mb-3">
-                Technologies I work with:
-              </p>
-              <ul className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm font-mono text-slate-400">
-                {SKILLS.map((skill, i) => (
-                  <li key={i} className="flex items-center gap-2">
-                    <span className="text-blue-400">▹</span> {skill}
-                  </li>
-                ))}
-              </ul>
+            <div className="pt-4 space-y-6">
+              <div>
+                <p className="font-medium text-slate-200 mb-3">Technical:</p>
+                <ul className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm font-mono text-slate-400">
+                  {TECH_SKILLS.map((skill, i) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <span className="text-blue-400">▹</span> {skill}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p className="font-medium text-slate-200 mb-3">
+                  Product &amp; Business:
+                </p>
+                <ul className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm font-mono text-slate-400">
+                  {PRODUCT_SKILLS.map((skill, i) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <span className="text-emerald-400">▹</span> {skill}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
 
@@ -401,113 +437,74 @@ export default function App() {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-24 max-w-6xl mx-auto px-6">
+      {/* Case Studies Section */}
+      <section id="casestudies" className="py-24 max-w-4xl mx-auto px-6">
         <div className="flex items-center gap-4 mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-100 flex items-center gap-2">
-            <span className="text-blue-400 font-mono text-xl">03.</span>{" "}
-            Projects
+            <span className="text-blue-400 font-mono text-xl">03.</span> Case
+            Studies
           </h2>
           <div className="h-px bg-slate-700 grow max-w-xs"></div>
         </div>
 
-        {/* Category: School Projects */}
-        <div className="mb-16">
-          <div className="flex items-center gap-3 mb-8">
-            <GraduationCap className="text-blue-400" size={24} />
-            <h3 className="text-xl font-bold text-slate-200">School</h3>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SCHOOL_PROJECTS.map((project, idx) => (
-              <div
-                key={idx}
-                className="group bg-slate-800 rounded-lg p-6 hover:-translate-y-2 transition-transform duration-300 border border-slate-700 hover:border-blue-500/50 shadow-xl shadow-black/20"
-              >
-                <div className="flex justify-between items-start mb-4">
-                  <div
-                    className={`p-3 rounded-full ${project.color} bg-opacity-20 text-blue-300`}
-                  >
-                    <Code size={20} />
-                  </div>
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-slate-400 hover:text-blue-400 transition-colors"
-                  >
-                    <ExternalLink size={20} />
-                  </a>
-                </div>
-
-                <h4 className="text-xl font-bold text-slate-100 mb-2 group-hover:text-blue-400 transition-colors">
-                  {project.title}
-                </h4>
-
-                <p className="text-slate-400 text-sm mb-6 leading-relaxed">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mt-auto">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs font-mono text-slate-500"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+        <div className="space-y-10">
+          {CASE_STUDIES.map((cs, idx) => (
+            <div
+              key={idx}
+              className="bg-slate-800/50 border border-slate-700 hover:border-blue-500/50 rounded-2xl p-8 transition-colors"
+            >
+              <div className="flex items-start justify-between mb-2">
+                <div className="flex items-center gap-3">
+                  <BookOpen className="text-blue-400" size={20} />
+                  <span className="text-blue-400 font-mono text-sm">
+                    {cs.company} · {cs.period}
+                  </span>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
 
-        {/* Category: Other Projects */}
-        <div>
-          <div className="flex items-center gap-3 mb-8">
-            <Cpu className="text-emerald-400" size={24} />
-            <h3 className="text-xl font-bold text-slate-200">Other</h3>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {OTHER_PROJECTS.map((project, idx) => (
-              <div
-                key={idx}
-                className="group bg-slate-800 rounded-lg p-6 hover:-translate-y-2 transition-transform duration-300 border border-slate-700 hover:border-emerald-500/50 shadow-xl shadow-black/20"
-              >
-                <div className="flex justify-between items-start mb-4">
-                  <div
-                    className={`p-3 rounded-full ${project.color} bg-opacity-20 text-emerald-300`}
-                  >
-                    <Globe size={20} />
-                  </div>
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    className="text-slate-400 hover:text-emerald-400 transition-colors"
-                  >
-                    <ExternalLink size={20} />
-                  </a>
+              <h3 className="text-xl font-bold text-slate-100 mb-6">
+                {cs.title}
+              </h3>
+
+              <div className="grid md:grid-cols-3 gap-6 mb-6">
+                <div className="space-y-2">
+                  <p className="text-xs font-mono uppercase tracking-widest text-slate-500">
+                    The Problem
+                  </p>
+                  <p className="text-slate-400 text-sm leading-relaxed">
+                    {cs.problem}
+                  </p>
                 </div>
-                <h4 className="text-xl font-bold text-slate-100 mb-2 group-hover:text-emerald-400 transition-colors">
-                  {project.title}
-                </h4>
-                <p className="text-slate-400 text-sm mb-6">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs font-mono text-slate-500"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                <div className="space-y-2">
+                  <p className="text-xs font-mono uppercase tracking-widest text-slate-500">
+                    The Decision
+                  </p>
+                  <p className="text-slate-400 text-sm leading-relaxed">
+                    {cs.decision}
+                  </p>
+                </div>
+                <div className="space-y-2">
+                  <p className="text-xs font-mono uppercase tracking-widest text-emerald-500">
+                    The Outcome
+                  </p>
+                  <p className="text-slate-300 text-sm leading-relaxed font-medium">
+                    {cs.outcome}
+                  </p>
                 </div>
               </div>
-            ))}
-          </div>
+
+              <div className="flex flex-wrap gap-2">
+                {cs.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs font-mono text-blue-400 bg-blue-400/10 border border-blue-400/20 px-2 py-1 rounded"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -521,8 +518,8 @@ export default function App() {
           Get In Touch
         </h2>
         <p className="text-slate-400 text-lg mb-12 leading-relaxed">
-          I'm currently looking for new opportunities. Whether you have a
-          question or just want to say hi, I'll try my best to get back to you!
+          If you're building something ambitious and need someone who can own
+          the gap between product, engineering, and growth — let's talk.
         </p>
 
         <div className="flex justify-center gap-6 mb-12">
@@ -546,22 +543,25 @@ export default function App() {
           >
             <Mail size={24} />
           </a>
-          <a
+          {/* <a
             href={PERSONAL_INFO.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
             className="text-slate-400 hover:text-green-500 transition-colors"
           >
             <MessageCircle size={24} />
-          </a>
+          </a> */}
         </div>
 
         <div className="flex flex-col items-center gap-4">
           <a
-            href={`mailto:${PERSONAL_INFO.email}`}
-            className="inline-block px-8 py-4 border border-blue-400 text-blue-400 rounded hover:bg-blue-400/10 transition-colors font-medium text-lg"
+            href={PERSONAL_INFO.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-4 border border-green-500 text-green-400 rounded hover:bg-green-500/10 transition-colors font-medium text-lg"
           >
-            Say Hello
+            <MessageCircle size={20} />
+            DM on WhatsApp
           </a>
 
           <a
@@ -576,7 +576,7 @@ export default function App() {
       </section>
 
       <footer className="py-6 text-center text-slate-500 text-sm font-mono">
-        <p>Designed & Built by {PERSONAL_INFO.name} with ❤️</p>
+        <p>Built by {PERSONAL_INFO.name} with ❤️</p>
       </footer>
     </div>
   );
