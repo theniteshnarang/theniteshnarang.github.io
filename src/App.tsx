@@ -138,70 +138,23 @@ const EXPERIENCE = [
   },
 ];
 
-const CASE_STUDIES = [
-  {
-    title: "Scaling a Healthcare Dashboard Across 30+ Countries",
-    company: "Novocuris",
-    period: "Mar 2025 – Sep 2025",
-    problem:
-      "A growing healthtech platform needed a multi-tenant admin dashboard that could be white-labeled for enterprise clients across 30+ countries — with zero per-client engineering re-work.",
-    decision:
-      "I proposed and owned a white-labeling architecture using config-driven theming and role-based access controls. Rather than building per-client, we built once and deployed everywhere.",
-    outcome:
-      "Served 2500+ patients across 30+ countries. Reduced UI development time by 50%. Achieved 90% Core Web Vitals. Enterprise client onboarding shrunk from weeks to days.",
-    tags: [
-      "Product Architecture",
-      "White-labeling",
-      "Healthcare",
-      "Enterprise SaaS",
-    ],
-  },
-];
-
-// // --- PROJECT DATA ---
-// const SCHOOL_PROJECTS = [
+// const CASE_STUDIES = [
 //   {
-//     title: "Element Design",
-//     description:
-//       "A component library built from scratch to learn UI patterns and fundamental design principles.",
-//     tags: ["HTML", "CSS", "JS"],
-//     link: "https://element-design.netlify.app/",
-//     color: "bg-blue-500",
-//   },
-//   {
-//     title: "Geeky Basket",
-//     description:
-//       "A full stack web application to learn e-commerce architecture and system design.",
-//     tags: ["Element Design", "React", "Redux", "Node.js", "MongoDB"],
-//     link: "https://geeky-basket.netlify.app",
-//     color: "bg-indigo-500",
-//   },
-//   {
-//     title: "Geeky Talks",
-//     description:
-//       "A YouTube design clone targeted at geeky customers, built to master full stack development and complex UI design.",
-//     tags: ["Element Design", "React", "Redux", "Node.js", "MongoDB"],
-//     link: "https://geeky-talks.netlify.app",
-//     color: "bg-purple-500",
-//   },
-//   {
-//     title: "Animated Dummy Portfolio",
-//     description:
-//       "A visually engaging portfolio project created specifically to learn and implement GSAP animations.",
-//     tags: ["GSAP", "Animations", "Frontend"],
-//     link: "https://nitproject4.netlify.app/",
-//     color: "bg-pink-500",
-//   },
-// ];
-
-// const OTHER_PROJECTS = [
-//   {
-//     title: "Personal Portfolio V1",
-//     description:
-//       "The first iteration of my personal website built with HTML/CSS.",
-//     tags: ["HTML", "CSS"],
-//     link: "https://niteshnarang.netlify.app/",
-//     color: "bg-emerald-500",
+//     title: "Scaling a Healthcare Dashboard Across 30+ Countries",
+//     company: "Novocuris",
+//     period: "Mar 2025 – Sep 2025",
+//     problem:
+//       "A growing healthtech platform needed a multi-tenant admin dashboard that could be white-labeled for enterprise clients across 30+ countries — with zero per-client engineering re-work.",
+//     decision:
+//       "I proposed and owned a white-labeling architecture using config-driven theming and role-based access controls. Rather than building per-client, we built once and deployed everywhere.",
+//     outcome:
+//       "Served 2500+ patients across 30+ countries. Reduced UI development time by 50%. Achieved 90% Core Web Vitals. Enterprise client onboarding shrunk from weeks to days.",
+//     tags: [
+//       "Product Architecture",
+//       "White-labeling",
+//       "Healthcare",
+//       "Enterprise SaaS",
+//     ],
 //   },
 // ];
 
@@ -483,64 +436,13 @@ export default function App() {
           <div className="h-px bg-slate-700 grow max-w-xs"></div>
         </div>
 
-        <div className="space-y-10">
-          {CASE_STUDIES.map((cs, idx) => (
-            <div
-              key={idx}
-              className="bg-slate-800/50 border border-slate-700 hover:border-blue-500/50 rounded-2xl p-8 transition-colors"
-            >
-              <div className="flex items-start justify-between mb-2">
-                <div className="flex items-center gap-3">
-                  <BookOpen className="text-blue-400" size={20} />
-                  <span className="text-blue-400 font-mono text-sm">
-                    {cs.company} · {cs.period}
-                  </span>
-                </div>
-              </div>
-
-              <h3 className="text-xl font-bold text-slate-100 mb-6">
-                {cs.title}
-              </h3>
-
-              <div className="grid md:grid-cols-3 gap-6 mb-6">
-                <div className="space-y-2">
-                  <p className="text-xs font-mono uppercase tracking-widest text-slate-500">
-                    The Problem
-                  </p>
-                  <p className="text-slate-400 text-sm leading-relaxed">
-                    {cs.problem}
-                  </p>
-                </div>
-                <div className="space-y-2">
-                  <p className="text-xs font-mono uppercase tracking-widest text-slate-500">
-                    The Decision
-                  </p>
-                  <p className="text-slate-400 text-sm leading-relaxed">
-                    {cs.decision}
-                  </p>
-                </div>
-                <div className="space-y-2">
-                  <p className="text-xs font-mono uppercase tracking-widest text-emerald-500">
-                    The Outcome
-                  </p>
-                  <p className="text-slate-300 text-sm leading-relaxed font-medium">
-                    {cs.outcome}
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex flex-wrap gap-2">
-                {cs.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs font-mono text-blue-400 bg-blue-400/10 border border-blue-400/20 px-2 py-1 rounded"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
+        <div className="flex flex-col items-center justify-center py-20 gap-4 border border-dashed border-slate-700 rounded-2xl bg-slate-800/20">
+          <BookOpen size={36} className="text-slate-600" />
+          <p className="text-xl font-semibold text-slate-300">Coming Soon</p>
+          <p className="text-slate-500 text-sm text-center max-w-sm">
+            I'm documenting key product decisions, trade-offs, and outcomes from
+            my work. Check back soon.
+          </p>
         </div>
       </section>
 
