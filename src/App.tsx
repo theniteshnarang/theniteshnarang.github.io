@@ -361,7 +361,7 @@ export default function App() {
               <img
                 src={PERSONAL_INFO.photo}
                 alt={PERSONAL_INFO.name}
-                className="w-full h-full object-cover object-top filter grayscale hover:grayscale-0 transition-all duration-500 ease-in-out cursor-pointer"
+                className="w-full h-full object-cover object-top transition-all duration-500 ease-in-out cursor-pointer"
               />
               <div className="absolute inset-0 bg-blue-500/10 group-hover:bg-transparent transition-colors duration-300 pointer-events-none"></div>
             </div>
