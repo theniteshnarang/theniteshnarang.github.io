@@ -13,6 +13,7 @@ import {
   Layout,
   TrendingUp,
   BookOpen,
+  ExternalLink,
 } from "lucide-react";
 
 // --- PERSONAL DATA FROM RESUME ---
@@ -64,13 +65,26 @@ const EXPERIENCE = [
     period: "Oct 2025 - Present",
     points: [
       "Spent extensive time in R&D across product domains — a deliberate deep-dive that sharpened product intuition but reinforced the need to ship over research.",
-      "Currently building AutoDraft — a product for advocates to streamline legal drafting workflows (auto-draft-product-page.vercel.app).",
+      <>
+        Currently building AutoDraft
+        <a
+          href="https://auto-draft-product-page.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex ml-1 opacity-60 hover:opacity-100 transition-opacity text-blue-400"
+        >
+          <ExternalLink size={13} className="inline mb-0.5" />
+        </a>{" "}
+        — a product for advocates to streamline legal drafting workflows.
+      </>,
       "Exploring multiple product ideas at the ideation stage, validating problem spaces across legal-tech, productivity, and SaaS.",
       "Actively pursuing Founder's Office roles to apply this product-building mindset within a high-growth startup.",
     ],
   },
   {
-    company: "Novocuris (Contract)",
+    company: "Asika AI (Contract)",
+    fmr: "Novocuris",
+    link: "https://www.asika.ai/",
     role: "Frontend Architect",
     period: "Mar 2025 - Sep 2025",
     points: [
@@ -81,6 +95,7 @@ const EXPERIENCE = [
   },
   {
     company: "Crework Labs (Contract)",
+    link: "https://www.creworklabs.com",
     role: "Full Stack Engineer",
     period: "Oct 2024 - Feb 2025",
     points: [
@@ -91,6 +106,7 @@ const EXPERIENCE = [
   },
   {
     company: "Alyve Health",
+    link: "https://www.alyve.health/",
     role: "Frontend Engineer",
     period: "Nov 2021 - Apr 2024",
     points: [
@@ -102,6 +118,7 @@ const EXPERIENCE = [
   },
   {
     company: "Neog.camp",
+    link: "https://neog.camp/",
     role: "Teaching Assistant",
     period: "Feb 2021 - Aug 2021",
     points: [
@@ -109,7 +126,9 @@ const EXPERIENCE = [
     ],
   },
   {
-    company: "Tech-Receptives Solutions",
+    company: "OpenEduCat",
+    fmr: "Tech-Receptives Solutions",
+    link: "https://openeducat.org/",
     role: "Intern Application Engineer",
     period: "Nov 2020 - Mar 2021",
     points: [
@@ -419,7 +438,24 @@ export default function App() {
               <span className="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full bg-slate-700 border-2 border-slate-900"></span>
               <h3 className="text-xl font-bold text-slate-100">
                 {job.role}{" "}
-                <span className="text-blue-400">@ {job.company}</span>
+                <span className="text-blue-400">
+                  @ {job.company}
+                  {job.link && (
+                    <a
+                      href={job.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex ml-1 opacity-60 hover:opacity-100 transition-opacity"
+                    >
+                      <ExternalLink size={13} className="inline mb-0.5" />
+                    </a>
+                  )}
+                </span>
+                {job.fmr && (
+                  <span className="text-xs text-slate-500 font-normal ml-2">
+                    fmr. {job.fmr}
+                  </span>
+                )}
               </h3>
               <p className="font-mono text-sm text-slate-500 mb-4">
                 {job.period}
