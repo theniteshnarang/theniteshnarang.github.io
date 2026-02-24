@@ -60,25 +60,14 @@ const PRODUCT_SKILLS = [
 
 const EXPERIENCE = [
   {
-    company: "Independent",
-    role: "Product Builder & Founder's Office Candidate",
+    company: "Nivyaan Labs",
+    link: "https://www.nivyaan.com",
+    role: "Founder & Product Lead",
     period: "Oct 2025 - Present",
     points: [
-      "Spent extensive time in R&D across product domains — a deliberate deep-dive that sharpened product intuition but reinforced the need to ship over research.",
-      <>
-        Currently building AutoDraft
-        <a
-          href="https://auto-draft-product-page.vercel.app"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex ml-1 opacity-60 hover:opacity-100 transition-opacity text-blue-400"
-        >
-          <ExternalLink size={13} className="inline mb-0.5" />
-        </a>{" "}
-        — a product for advocates to streamline legal drafting workflows.
-      </>,
-      "Exploring multiple product ideas at the ideation stage, validating problem spaces across legal-tech, productivity, and SaaS.",
-      "Actively pursuing Founder's Office roles to apply this product-building mindset within a high-growth startup.",
+      "Did deep user research to explore building our own product — learned the hard way that shipping beats over-researching.",
+      "Leading end-to-end product development engagements — spanning discovery, architecture, design, and delivery.",
+      "Bringing together engineering depth and product thinking to build scalable, user-focused solutions for clients.",
     ],
   },
   {
