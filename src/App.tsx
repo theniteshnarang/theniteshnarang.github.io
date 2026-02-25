@@ -24,7 +24,7 @@ const PERSONAL_INFO = {
     "I've shipped products used by 10k+ users. Now I want to know why they stayed — and what made them pay.",
   about:
     "After 4+ years of building scalable SaaS products as a software engineer, I'm now stepping into a Founder's Office role — bringing an engineer's rigour to business strategy, growth, and operations. I've led frontend architecture for platforms serving thousands of users across healthcare and EdTech, and am now channelling that systems-thinking into how products are built, positioned, and grown. I thrive at the intersection of technical depth and business outcomes — translating between what's possible and what's profitable.",
-  email: "narangnitesh@ymail.com",
+  email: "nitesh@nivyaan.com",
   phone: "9106857146",
   whatsapp: "https://wa.me/919106857146",
   location: "Ahmedabad, India",
