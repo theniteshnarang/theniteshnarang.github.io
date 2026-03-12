@@ -95,7 +95,9 @@ function StatItem({ value, label }: { value: number; label: string }) {
       >
         {count}+
       </span>
-      <span className="text-xs sm:text-sm text-text-muted mt-1">{label}</span>
+      <span className="text-xs sm:text-sm md:text-base text-text-muted mt-1">
+        {label}
+      </span>
     </div>
   );
 }
@@ -126,7 +128,7 @@ export default function App() {
   const { isDark, toggle } = useTheme();
 
   return (
-    <div className="h-dvh overflow-hidden bg-bg text-text-primary selection:bg-[#e6f263]/30">
+    <div className="min-h-dvh md:h-dvh md:overflow-hidden bg-bg text-text-primary selection:bg-[#e6f263]/30">
       {/* Theme toggle */}
       <div className="fixed top-4 right-4 z-50 flex flex-col items-center group/theme">
         <button
@@ -141,30 +143,32 @@ export default function App() {
         </span>
       </div>
       {/* Main card layout */}
-      <main className="h-full flex flex-col items-center justify-center px-4 py-6 sm:py-8 md:py-12">
-        <div className="w-full max-w-2xl flex flex-col gap-2 sm:gap-3 md:gap-4">
+      <main className="min-h-dvh md:h-dvh flex flex-col items-center justify-center px-4 py-6 sm:py-8 md:py-6">
+        <div className="w-full max-w-2xl flex flex-col gap-2 sm:gap-3 md:gap-3">
           {/* Hero — left-aligned with stats top-right */}
           <section className="flex justify-between items-start">
-            <div className="flex flex-col items-start gap-2 sm:gap-3 md:gap-4">
-              {/* Profile photo */}
-              <div className="group relative">
-                <div className="absolute -inset-1 rounded-full bg-linear-to-br from-[#e6f263] to-[#b8c44e] opacity-0 blur-md transition-opacity duration-500 group-hover:opacity-60" />
-                <img
-                  src={LINKS.photo}
-                  alt="Nitesh Narang"
-                  className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 rounded-full object-cover object-top border-2 border-border ring-2 ring-transparent transition-all duration-500 group-hover:ring-[#e6f263]/50"
-                />
-              </div>
+            <div className="flex flex-col items-start gap-2 sm:gap-3 md:gap-3">
+              {/* Profile photo + name row */}
+              <div className="flex items-center gap-3 sm:gap-4">
+                <div className="group relative shrink-0">
+                  <div className="absolute -inset-1 rounded-full bg-linear-to-br from-[#e6f263] to-[#b8c44e] opacity-0 blur-md transition-opacity duration-500 group-hover:opacity-60" />
+                  <img
+                    src={LINKS.photo}
+                    alt="Nitesh Narang"
+                    className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full object-cover object-top border-2 border-border ring-2 ring-transparent transition-all duration-500 group-hover:ring-[#e6f263]/50"
+                  />
+                </div>
 
-              <div>
-                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-text-heading">
-                  Nitesh Narang
-                </h1>
-                <p className="mt-1 text-sm sm:text-base md:text-lg text-text-secondary">
-                  Curious by nature
-                  <span className="text-accent">.</span> Builder by craft
-                  <span className="text-accent">.</span>
-                </p>
+                <div>
+                  <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-text-heading">
+                    Nitesh Narang
+                  </h1>
+                  <p className="mt-0.5 text-sm sm:text-base md:text-lg text-text-secondary">
+                    Curious by nature
+                    <span className="text-accent">.</span> Builder by craft
+                    <span className="text-accent">.</span>
+                  </p>
+                </div>
               </div>
 
               {/* Social icons */}
@@ -195,13 +199,13 @@ export default function App() {
           </section>
 
           {/* Bento Grid */}
-          <section className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+          <section className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-3">
             {/* About card */}
-            <div className="col-span-2 md:col-span-2 bg-surface border border-border rounded-xl md:rounded-2xl p-4 md:p-6 transition-all duration-300 hover:bg-surface-hover hover:border-card-hover-border hover:shadow-lg hover:shadow-card-hover-shadow">
-              <h2 className="text-xs font-semibold uppercase tracking-wider text-accent mb-2 md:mb-3">
+            <div className="col-span-2 md:col-span-2 bg-surface border border-border rounded-xl md:rounded-2xl p-4 md:p-4 transition-all duration-300 hover:bg-surface-hover hover:border-card-hover-border hover:shadow-lg hover:shadow-card-hover-shadow">
+              <h2 className="text-xs font-semibold uppercase tracking-wider text-accent mb-2 md:mb-2">
                 About
               </h2>
-              <p className="text-text-secondary text-xs sm:text-sm leading-relaxed">
+              <p className="text-text-secondary text-xs sm:text-sm md:text-sm leading-relaxed">
                 Engineer turned founder who thrives where code meets business.
                 I've shipped products to 10k+ users across healthcare and EdTech
                 — now I'm building what's next at{" "}
@@ -219,21 +223,21 @@ export default function App() {
             </div>
 
             {/* Connect card */}
-            <div className="col-span-2 md:col-span-1 bg-surface border border-border rounded-xl md:rounded-2xl p-4 md:p-6 flex flex-row md:flex-col justify-between md:justify-between gap-2 transition-all duration-300 hover:bg-surface-hover hover:border-card-hover-border hover:shadow-lg hover:shadow-card-hover-shadow">
+            <div className="col-span-2 md:col-span-1 bg-surface border border-border rounded-xl md:rounded-2xl p-4 md:p-4 flex flex-row md:flex-col justify-between md:justify-between gap-2 transition-all duration-300 hover:bg-surface-hover hover:border-card-hover-border hover:shadow-lg hover:shadow-card-hover-shadow">
               <div>
-                <h2 className="text-xs font-semibold uppercase tracking-wider text-accent mb-2 md:mb-3">
+                <h2 className="text-xs font-semibold uppercase tracking-wider text-accent mb-2 md:mb-2">
                   Connect
                 </h2>
-                <p className="text-text-secondary text-xs sm:text-sm leading-relaxed">
+                <p className="text-text-secondary text-xs sm:text-sm md:text-sm leading-relaxed">
                   Building something interesting? Let's talk.
                 </p>
               </div>
-              <div className="flex flex-row md:flex-col gap-3 md:gap-2 md:mt-4 items-center md:items-start shrink-0">
+              <div className="flex flex-row md:flex-col gap-3 md:gap-1.5 md:mt-2 items-center md:items-start shrink-0">
                 <a
                   href={LINKS.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-accent hover:text-accent-hover transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm md:text-sm text-accent hover:text-accent-hover transition-colors"
                 >
                   <MessageCircle size={14} />
                   WhatsApp
@@ -241,7 +245,7 @@ export default function App() {
                 </a>
                 <a
                   href={`mailto:${LINKS.email}`}
-                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-accent hover:text-accent-hover transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm md:text-sm text-accent hover:text-accent-hover transition-colors"
                 >
                   <Mail size={14} />
                   <span className="hidden sm:inline">{LINKS.email}</span>
@@ -252,7 +256,7 @@ export default function App() {
             </div>
 
             {/* Stack card — full width */}
-            <div className="col-span-2 md:col-span-3 bg-surface border border-border rounded-xl md:rounded-2xl p-3 sm:p-4 md:p-5 transition-all duration-300 hover:bg-surface-hover hover:border-card-hover-border hover:shadow-lg hover:shadow-card-hover-shadow">
+            <div className="col-span-2 md:col-span-3 bg-surface border border-border rounded-xl md:rounded-2xl p-3 sm:p-4 md:p-4 transition-all duration-300 hover:bg-surface-hover hover:border-card-hover-border hover:shadow-lg hover:shadow-card-hover-shadow">
               <div className="grid grid-cols-3 gap-x-4 sm:gap-x-6">
                 {[
                   { label: "Tech", items: TECH_STACK },
@@ -260,14 +264,14 @@ export default function App() {
                   { label: "Industries", items: INDUSTRIES },
                 ].map(({ label, items }) => (
                   <div key={label}>
-                    <h2 className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-accent mb-1.5 sm:mb-2">
+                    <h2 className="text-[10px] sm:text-xs md:text-xs font-semibold uppercase tracking-wider text-accent mb-1.5 sm:mb-2">
                       {label}
                     </h2>
                     <div className="flex flex-wrap gap-1 sm:gap-1.5">
                       {items.map((item) => (
                         <span
                           key={item}
-                          className="px-1.5 sm:px-2 py-0.5 text-[10px] sm:text-xs text-text-chip bg-chip rounded leading-snug"
+                          className="px-1.5 sm:px-2 md:px-2.5 py-0.5 text-[10px] sm:text-xs md:text-xs text-text-chip bg-chip rounded leading-snug"
                         >
                           {item}
                         </span>
