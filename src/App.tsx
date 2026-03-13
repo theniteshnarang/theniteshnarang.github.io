@@ -146,7 +146,7 @@ export default function App() {
       <main className="min-h-dvh md:h-dvh flex flex-col items-center justify-center px-4 py-6 sm:py-8 md:py-6">
         <div className="w-full max-w-2xl flex flex-col gap-2 sm:gap-3 md:gap-3">
           {/* Hero — left-aligned with stats top-right */}
-          <section className="flex justify-between items-start">
+          <section className="flex flex-col gap-3 md:flex-row md:justify-between md:items-start">
             <div className="flex flex-col items-start gap-2 sm:gap-3 md:gap-3">
               {/* Profile photo + name row */}
               <div className="flex items-center gap-3 sm:gap-4">
@@ -171,8 +171,14 @@ export default function App() {
                 </div>
               </div>
 
+              {/* Stats — visible on mobile only, above socials */}
+              <div className="flex gap-6 sm:gap-8 md:hidden self-stretch justify-center">
+                <StatItem value={5} label="Years" />
+                <StatItem value={10} label="Products" />
+              </div>
+
               {/* Social icons */}
-              <div className="flex items-center gap-3 sm:gap-4">
+              <div className="flex items-center gap-3 sm:gap-4 self-stretch justify-center md:justify-start">
                 {SOCIALS.map(({ href, icon: Icon, label }) => (
                   <a
                     key={label}
@@ -191,8 +197,8 @@ export default function App() {
               </div>
             </div>
 
-            {/* Stats — top right */}
-            <div className="flex gap-6 sm:gap-8 pt-2">
+            {/* Stats — desktop only, top-right */}
+            <div className="hidden md:flex gap-6 sm:gap-8 md:pt-2">
               <StatItem value={5} label="Years" />
               <StatItem value={10} label="Products" />
             </div>
