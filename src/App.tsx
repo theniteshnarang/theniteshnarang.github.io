@@ -18,7 +18,7 @@ const LINKS = {
   twitter: "https://x.com/theniteshnarang",
   email: "nitesh@nivyaan.com",
   whatsapp: "https://wa.me/919106857146",
-  resume: "./Nitesh Narang Resume.pdf",
+  resume: "./nitesh-resume.pdf",
   photo: "./niteshprofile.png",
 };
 
