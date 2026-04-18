@@ -212,9 +212,9 @@ export default function App() {
                 About
               </h2>
               <p className="text-text-secondary text-xs sm:text-sm md:text-sm leading-relaxed">
-                Engineer turned founder who thrives where code meets business.
-                I've shipped products to 10k+ users across healthcare and EdTech
-                — now I'm building what's next at{" "}
+                A technical founder who thrives where code meets business. I've
+                shipped products to 10k+ users across healthcare and edtech —
+                now I'm building what's next at{" "}
                 <a
                   href="https://www.nivyaan.com"
                   target="_blank"
