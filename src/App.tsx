@@ -176,25 +176,6 @@ export default function App() {
                 <StatItem value={5} label="Years" />
                 <StatItem value={10} label="Products" />
               </div>
-
-              {/* Social icons */}
-              <div className="flex items-center gap-3 sm:gap-4 self-stretch justify-center md:justify-start">
-                {SOCIALS.map(({ href, icon: Icon, label }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={label}
-                    className="group/social flex flex-col items-center gap-1 text-text-muted hover:text-accent transition-colors duration-200"
-                  >
-                    <Icon size={18} className="sm:w-5 sm:h-5" />
-                    <span className="text-[9px] sm:text-[10px] opacity-0 group-hover/social:opacity-100 transition-opacity duration-200">
-                      {label}
-                    </span>
-                  </a>
-                ))}
-              </div>
             </div>
 
             {/* Stats — desktop only, top-right */}
@@ -202,6 +183,22 @@ export default function App() {
               <StatItem value={5} label="Years" />
               <StatItem value={10} label="Products" />
             </div>
+          </section>
+          {/* Social icons */}
+          <section className="flex items-center gap-7 justify-center my-2">
+            {SOCIALS.map(({ href, icon: Icon, label }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="group/social flex flex-col items-center gap-1 text-text-muted hover:text-accent transition-colors duration-200"
+              >
+                <Icon size={18} className="sm:w-5 sm:h-5" />
+                <span className="text-[9px] sm:text-[10px]">{label}</span>
+              </a>
+            ))}
           </section>
 
           {/* Bento Grid */}
