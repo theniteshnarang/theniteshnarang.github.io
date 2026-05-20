@@ -6,6 +6,7 @@ import {
   Twitter,
   MessageCircle,
   FileText,
+  Briefcase,
   ArrowUpRight,
   Sun,
   Moon,
@@ -53,6 +54,7 @@ const SOCIALS = [
   { href: `mailto:${LINKS.email}`, icon: Mail, label: "Email" },
   { href: LINKS.whatsapp, icon: MessageCircle, label: "WhatsApp" },
   { href: LINKS.resume, icon: FileText, label: "Resume" },
+  { href: "#/portfolio", icon: Briefcase, label: "Portfolio", internal: true },
 ];
 
 function useCountUp(target: number, duration = 1200) {
@@ -184,14 +186,15 @@ export default function App() {
               <StatItem value={10} label="Products" />
             </div>
           </section>
-          {/* Social icons */}
+          {/* Socials / Navbar Section */}
           <section className="flex items-center gap-7 justify-center my-2">
-            {SOCIALS.map(({ href, icon: Icon, label }) => (
+            {SOCIALS.map(({ href, icon: Icon, label, internal }) => (
               <a
                 key={label}
                 href={href}
-                target="_blank"
-                rel="noopener noreferrer"
+                {...(internal
+                  ? {}
+                  : { target: "_blank", rel: "noopener noreferrer" })}
                 aria-label={label}
                 className="group/social flex flex-col items-center gap-1 text-text-muted hover:text-accent transition-colors duration-200"
               >
