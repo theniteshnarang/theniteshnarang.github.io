@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { ArrowLeft, ExternalLink, Github } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import ProjectCarousel, { type CarouselSlide } from "../components/ProjectCarousel";
+import ProjectCarousel, {
+  type CarouselSlide,
+} from "../components/ProjectCarousel";
 
 interface Project {
   title: string;
@@ -14,212 +16,107 @@ interface Project {
 
 const PROJECTS: Project[] = [
   {
-    title: "MediConnect",
+    title: "Healthcare Dashboard",
     description:
-      "HIPAA-compliant telemedicine platform connecting patients with healthcare providers. Features real-time video consultations, e-prescriptions, and appointment scheduling.",
-    tags: ["Next.js", "TypeScript", "WebRTC", "PostgreSQL"],
-    github: "https://github.com/theniteshnarang/mediconnect",
+      "End-to-end healthcare management platform serving 2,500+ patients across 30+ countries. Owned the full product lifecycle — from scoping to delivery — with white-labeling strategy that accelerated enterprise client onboarding.",
+    tags: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
     slides: [
       {
-        label: "Patient Dashboard",
+        image: "/Healthcare Dashboard/Home Dashboard.png",
+        label: "Dashboard",
         need: [
-          "Patients couldn't find available doctors without calling multiple clinics",
-          "No centralized way to view upcoming appointments and prescription history",
-          "Elderly patients struggled with complex scheduling interfaces",
+          "Clinics serving international patients had fragmented records across disparate systems with no unified view",
+          "Manual patient data entry and retrieval caused errors and delayed care delivery across time zones",
+          "No role-based access control meant admin staff, doctors, and nurses all shared the same unrestricted view",
         ],
         impact: [
-          "Reduced appointment booking time from 15 min to under 2 min",
-          "Patient satisfaction scores improved by 34% in first quarter",
-          "Accessibility-first design boosted adoption among 60+ age group by 3x",
+          "Centralized 2,500+ patient records with real-time access across 30+ countries",
+          "Modular architecture cut UI development time by 50%, directly accelerating the sales cycle",
+          "RBAC ensured each role saw only what they needed, improving data privacy and workflow focus",
         ],
       },
       {
-        label: "Video Consultation",
+        image: "/Healthcare Dashboard/Appointment Page.png",
+        label: "Appointments",
         need: [
-          "Rural patients traveled 2+ hours for follow-up consultations",
-          "Existing video tools weren't HIPAA-compliant, creating compliance risk",
-          "Doctors needed ability to share lab results during calls in real time",
+          "Cross-border appointment booking was chaotic without timezone-aware scheduling across 30+ countries",
+          "Clinic staff spent hours manually coordinating doctor availability with patient time zones",
+          "High no-show rates from poor reminder systems, especially for international patients",
         ],
         impact: [
-          "Eliminated travel for 80% of follow-up visits, saving patients $200+ per visit",
-          "Zero compliance incidents across 15,000+ video consultations",
-          "Screen-sharing feature reduced miscommunication in test result discussions by 60%",
+          "Timezone-intelligent scheduling eliminated double-bookings across international clinics",
+          "Automated reminders reduced patient no-shows significantly within the first quarter",
+          "Staff reclaimed hours previously lost to manual appointment coordination",
         ],
       },
       {
-        label: "E-Prescription Workflow",
+        image: "/Healthcare Dashboard/Patients.png",
+        label: "Patients",
         need: [
-          "Paper prescriptions led to medication errors from illegible handwriting",
-          "Pharmacists spent hours verifying prescriptions over phone calls",
-          "No audit trail for controlled substance prescriptions",
+          "Clinic staff toggled between 3+ screens to view, search, and filter patient records across locations",
+          "No quick way to identify patients with pending documents, upcoming appointments, or critical flags",
+          "International patient data — time zones, languages, insurance — wasn't surfaced in the list view",
         ],
         impact: [
-          "Medication errors dropped by 47% within first 6 months of rollout",
-          "Pharmacy verification time reduced from 20 min to under 3 min per prescription",
-          "Full audit trail helped clinic pass DEA compliance audit with zero findings",
-        ],
-      },
-    ],
-  },
-  {
-    title: "EduFlow LMS",
-    description:
-      "Learning management system for K-12 schools with adaptive learning paths, parent dashboards, and integrated gradebook. Serves 5k+ students.",
-    tags: ["React", "Node.js", "MongoDB", "Redis"],
-    github: "https://github.com/theniteshnarang/eduflow",
-    live: "https://eduflow.example.com",
-    slides: [
-      {
-        label: "Adaptive Learning Paths",
-        need: [
-          "Teachers spent 40% of planning time creating differentiated materials for varying skill levels",
-          "Struggling students fell further behind while advanced students weren't challenged",
-          "No way to track individual student mastery at a granular skill level",
-        ],
-        impact: [
-          "Auto-generated learning paths saved teachers 6 hours per week on lesson planning",
-          "Below-grade readers improved 1.8 grade levels on average in one academic year",
-          "Real-time mastery dashboards gave teachers actionable data instead of gut feelings",
+          "Single unified directory gave staff instant search and filter across 2,500+ patients in 30+ countries",
+          "Status badges and priority flags helped front desk triage patients at a glance instead of digging through files",
+          "Inline international patient indicators reduced scheduling errors caused by timezone mismatches",
         ],
       },
       {
-        label: "Parent Dashboard",
+        image: "/Healthcare Dashboard/Patients edit.png",
+        label: "Patients Edit",
         need: [
-          "Parents only learned about issues during quarterly parent-teacher conferences",
-          "Email updates from teachers were inconsistent and often missed",
-          "Non-English-speaking parents had no access to progress information",
+          "Editing a patient record meant jumping to a separate system, breaking staff flow and doubling data entry",
+          "No validation on critical fields like phone numbers and emails led to bounced reminders and missed follow-ups",
+          "Audit trail was nonexistent — staff couldn't see who changed what or when on a patient profile",
         ],
         impact: [
-          "Parent engagement increased 3x with real-time progress notifications",
-          "Multi-language support (8 languages) reached 95% of the school community",
-          "Early intervention alerts reduced course failure rate by 28%",
-        ],
-      },
-    ],
-  },
-  {
-    title: "Clinix EHR",
-    description:
-      "Electronic health records system for small clinics. Includes patient history, diagnostic reports, billing, and insurance claim processing.",
-    tags: ["React", "NestJS", "MySQL", "Docker"],
-    slides: [
-      {
-        label: "Patient Records",
-        need: [
-          "Small clinics used paper files — one misfiled record meant lost patient history",
-          "Retrieving a single patient file took an average of 12 minutes",
-          "No easy way to spot drug interactions across handwritten prescription notes",
-        ],
-        impact: [
-          "Instant record retrieval eliminated front-desk bottlenecks during peak hours",
-          "Drug interaction alerts prevented 23 potential adverse events in pilot month",
-          "Clinics onboarding reduced from 2 weeks to 2 days with guided setup wizard",
+          "Inline editing within the same dashboard kept staff in flow and cut data entry time in half",
+          "Field-level validation eliminated bounced patient communications caused by malformed contact data",
+          "Full edit audit trail gave clinic admins visibility into every change for compliance and accountability",
         ],
       },
       {
-        label: "Insurance Claims",
+        image: "/Healthcare Dashboard/Admin Staff Page.png",
+        label: "Admin Staff",
         need: [
-          "Manual claim filing caused 30% rejection rate from coding errors",
-          "Staff spent 15+ hours per week re-submitting rejected claims",
-          "Small clinics lost $40k/year on average from unrecovered denied claims",
+          "Enterprise clients each needed a branded experience — a one-size-fits-all dashboard wouldn't close deals",
+          "Onboarding a new white-label client required weeks of custom UI development per deployment",
+          "Each client had unique configurations for staff roles, doctor directories, and hospital networks",
         ],
         impact: [
-          "Auto-coded claims reduced rejection rate from 30% to under 4%",
-          "Clinic staff reclaimed 15 hours/week — redirected to patient care",
-          "Average clinic recovered $32k/year in previously lost claim revenue",
-        ],
-      },
-    ],
-  },
-  {
-    title: "PollSense",
-    description:
-      "Real-time polling and survey platform with AI-powered sentiment analysis. Used by event organizers and community managers.",
-    tags: ["Next.js", "OpenAI", "Socket.io", "PostgreSQL"],
-    github: "https://github.com/theniteshnarang/pollsense",
-    live: "https://pollsense.example.com",
-    slides: [
-      {
-        label: "Live Polling Engine",
-        need: [
-          "Event organizers had no way to gauge audience sentiment in real time",
-          "Post-event surveys had under 10% response rate, giving skewed data",
-          "Q&A sessions were dominated by the loudest voices, not representative feedback",
-        ],
-        impact: [
-          "Real-time sentiment tracking helped speakers pivot topics mid-session based on audience interest",
-          "In-session polls achieved 94% response rate vs. 10% on post-event surveys",
-          "Anonymous upvoting surfaced questions from underrepresented attendees",
+          "White-labeling strategy cut enterprise onboarding from weeks to days across multiple geographies",
+          "Modular component architecture reduced per-client UI customization effort by 50%",
+          "Multi-tenant admin portal managed staff, doctors, and hospitals under a single configurable system",
         ],
       },
       {
-        label: "AI Sentiment Dashboard",
+        image: "/Healthcare Dashboard/Our Doctors.png",
+        label: "Our Doctors",
         need: [
-          "Manual analysis of open-ended survey responses took days to process",
-          "Community managers missed emerging issues buried in free-text feedback",
-          "Trending topics weren't surfaced until weekly reports, by which time they were stale",
+          "Doctor-directory data was scattered across spreadsheets with no centralized way to manage credentials, departments, and branch assignments",
+          "Patients couldn't find specialists by department or location — they called the front desk for basic lookups",
+          "No way to track doctor availability across branches, causing double-bookings and frustrated walk-ins",
         ],
         impact: [
-          "AI analysis reduced survey processing from 3 days to under 10 minutes",
-          "Automated topic clustering caught a critical community concern 4 days before it escalated",
-          "Sentiment trend lines gave community leads data to justify proactive policy changes",
-        ],
-      },
-    ],
-  },
-  {
-    title: "DevDash",
-    description:
-      "Developer analytics dashboard aggregating commits, PRs, and code review metrics across GitHub repositories. Designed for engineering leads.",
-    tags: ["React", "Go", "GraphQL", "TimescaleDB"],
-    github: "https://github.com/theniteshnarang/devdash",
-    slides: [
-      {
-        label: "Team Velocity Overview",
-        need: [
-          "Engineering managers couldn't track team throughput across 20+ repositories",
-          "One-off scripts to pull PR metrics were fragile and took hours to run",
-          "No visibility into review bottlenecks causing PRs to sit for days",
-        ],
-        impact: [
-          "Single dashboard replaced 5+ fragmented tools for tracking engineering metrics",
-          "Identified review bottlenecks that were adding 2.3 days to average PR cycle time",
-          "Data-driven conversations replaced subjective 'team feels slow' discussions",
+          "Centralized doctor directory with department, branch, and contact data accessible from a single screen",
+          "Patients could self-serve specialist lookups by department, reducing front-desk call volume",
+          "Branch-aware doctor assignments eliminated scheduling conflicts across multi-location clinics",
         ],
       },
       {
-        label: "Code Review Analytics",
+        image: "/Healthcare Dashboard/Special Offers.png",
+        label: "Special Offers",
         need: [
-          "Senior engineers were overwhelmed with review requests while junior devs were underutilized",
-          "No way to track review quality — some reviews were rubber stamps, others bikeshedded",
-          "Teams couldn't set or measure review SLAs without tooling support",
+          "Clinics had no way to push targeted health offers or campaigns to specific patient segments",
+          "Patient retention was purely reactive — no proactive outreach for follow-ups or preventive care",
+          "Special offers and health programs weren't reaching the right patients at the right time",
         ],
         impact: [
-          "Review load balancing reduced senior engineer review burden by 35%",
-          "Review depth metrics helped standardize quality across the team",
-          "SLA tracking brought median review turnaround from 18h to under 4h",
-        ],
-      },
-    ],
-  },
-  {
-    title: "SaaS Boilerplate",
-    description:
-      "Production-ready starter kit with auth, payments, team management, and role-based access. Built to ship MVPs in days, not weeks.",
-    tags: ["Next.js", "Prisma", "Stripe", "Tailwind CSS"],
-    github: "https://github.com/theniteshnarang/saas-boilerplate",
-    slides: [
-      {
-        label: "Auth & Onboarding",
-        need: [
-          "Developers spent 2-3 weeks wiring up auth, roles, and email verification for every new SaaS idea",
-          "Cookie-cutter auth templates didn't include team invitations and RBAC out of the box",
-          "Security misconfigurations in hand-rolled auth were the #1 cause of launch-day incidents",
-        ],
-        impact: [
-          "Reduced auth + team management setup from 3 weeks to under 2 hours",
-          "Pre-built RBAC covered 90% of common SaaS use cases without modification",
-          "Security-audited defaults prevented the most common OWASP auth vulnerabilities",
+          "Targeted offer engine enabled clinics to run data-driven patient engagement campaigns",
+          "Proactive health reminders improved patient retention and follow-up visit adherence",
+          "Segmented outreach ensured relevant offers reached the right patient demographics",
         ],
       },
     ],
@@ -340,10 +237,16 @@ export default function Portfolio() {
                   }`}
                 >
                   <div className="flex items-center justify-between gap-2">
-                    <span className="text-sm font-medium text-text-heading">{p.title}</span>
-                    <span className="text-[10px] text-text-muted">{p.tags.length} slides</span>
+                    <span className="text-sm font-medium text-text-heading">
+                      {p.title}
+                    </span>
+                    <span className="text-[10px] text-text-muted">
+                      {p.tags.length} slides
+                    </span>
                   </div>
-                  <p className="text-xs text-text-muted mt-0.5 line-clamp-1">{p.description}</p>
+                  <p className="text-xs text-text-muted mt-0.5 line-clamp-1">
+                    {p.description}
+                  </p>
                 </button>
               ))}
             </div>

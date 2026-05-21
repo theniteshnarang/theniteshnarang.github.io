@@ -53,7 +53,7 @@ export default function ProjectCarousel({ slides }: ProjectCarouselProps) {
           <img
             src={slide.image}
             alt={slide.label}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain bg-[#f5f5f5]"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-chip via-surface to-surface-hover">
