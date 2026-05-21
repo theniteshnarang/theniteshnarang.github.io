@@ -214,38 +214,6 @@ export default function Portfolio() {
               ))}
             </div>
           </section>
-
-          {/* All projects quick list */}
-          <section className="mt-2">
-            <h3 className="text-sm font-semibold text-text-muted uppercase tracking-wider mb-2">
-              All Projects
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-              {PROJECTS.map((p, i) => (
-                <button
-                  key={p.title}
-                  onClick={() => setActiveProject(i)}
-                  className={`text-left px-4 py-3 rounded-xl border transition-all duration-200 ${
-                    i === activeProject
-                      ? "bg-surface border-accent/40 shadow-sm"
-                      : "bg-surface border-border hover:border-card-hover-border hover:bg-surface-hover"
-                  }`}
-                >
-                  <div className="flex items-center justify-between gap-2">
-                    <span className="text-sm font-medium text-text-heading">
-                      {p.title}
-                    </span>
-                    <span className="text-[10px] text-text-muted">
-                      {p.slides.length} slides
-                    </span>
-                  </div>
-                  <p className="text-xs text-text-muted mt-0.5 line-clamp-1">
-                    {p.description}
-                  </p>
-                </button>
-              ))}
-            </div>
-          </section>
         </div>
       </main>
     </div>
