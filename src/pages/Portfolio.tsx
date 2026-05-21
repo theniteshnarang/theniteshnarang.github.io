@@ -39,9 +39,9 @@ const PROJECTS: Project[] = [
         image: "/Healthcare Dashboard/Appointment Page.png",
         label: "Appointments",
         need: [
-          "No calendar view across timezones. Booking a patient in Dubai for a London doctor was guesswork.",
-          "Staff toggled between screens to see today's vs. the week's vs. the month's appointments.",
-          "Doctor availability and appointment details weren't connected. Separate screens for each.",
+          "No calendar view across timezones. Booking a patient with different timezones had human conversion errors.",
+          "Staff relied on traditional approaches to manage doctor's time.",
+          "Doctor availability and appointment details weren't connected. Separate tabs for each.",
         ],
         impact: [
           "Calendar with today, week, and month views. Timezone-aware, one click to book.",
