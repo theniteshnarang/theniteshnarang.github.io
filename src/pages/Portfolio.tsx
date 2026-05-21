@@ -18,105 +18,105 @@ const PROJECTS: Project[] = [
   {
     title: "Healthcare Dashboard",
     description:
-      "End-to-end healthcare management platform serving 2,500+ patients across 30+ countries. Owned the full product lifecycle — from scoping to delivery — with white-labeling strategy that accelerated enterprise client onboarding.",
+      "Healthcare management platform used by 2,500+ patients across countries. I designed the UI and built the white-label system that helped close enterprise deals.",
     tags: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
     slides: [
       {
         image: "/Healthcare Dashboard/Home Dashboard.png",
         label: "Dashboard",
         need: [
-          "Clinics serving international patients had fragmented records across disparate systems with no unified view",
-          "Manual patient data entry and retrieval caused errors and delayed care delivery across time zones",
-          "No role-based access control meant admin staff, doctors, and nurses all shared the same unrestricted view",
+          "Patient records split across three systems. Staff logged into each one separately.",
+          "One mistyped phone number and reminders bounced silently for weeks.",
+          "Everyone shared the same screen — receptionists, doctors, lab techs. Zero access control.",
         ],
         impact: [
-          "Centralized 2,500+ patient records with real-time access across 30+ countries",
-          "Modular architecture cut UI development time by 50%, directly accelerating the sales cycle",
-          "RBAC ensured each role saw only what they needed, improving data privacy and workflow focus",
+          "Single dashboard. 2,500+ patients across countries.",
+          "Shared components cut deployment from weeks to days. Sales demoed the real product.",
+          "Role-based views. Doctors saw their queue. Admins managed operations.",
         ],
       },
       {
         image: "/Healthcare Dashboard/Appointment Page.png",
         label: "Appointments",
         need: [
-          "Cross-border appointment booking was chaotic without timezone-aware scheduling across 30+ countries",
-          "Clinic staff spent hours manually coordinating doctor availability with patient time zones",
-          "High no-show rates from poor reminder systems, especially for international patients",
+          "Patient in Dubai. Doctor in London. Timezone gap went unnoticed until the no-show.",
+          "Staff spent mornings on WhatsApp confirming who's coming in. Across countries.",
+          "Reminders hit inboxes at 3 AM. International patients missed at twice the rate.",
         ],
         impact: [
-          "Timezone-intelligent scheduling eliminated double-bookings across international clinics",
-          "Automated reminders reduced patient no-shows significantly within the first quarter",
-          "Staff reclaimed hours previously lost to manual appointment coordination",
+          "Timezone-aware scheduling caught conflicts before they became missed appointments.",
+          "Local-time reminders. No-shows dropped within the first month.",
+          "Staff reclaimed hours. That time went to patients, not calendars.",
         ],
       },
       {
         image: "/Healthcare Dashboard/Patients.png",
         label: "Patients",
         need: [
-          "Clinic staff toggled between 3+ screens to view, search, and filter patient records across locations",
-          "No quick way to identify patients with pending documents, upcoming appointments, or critical flags",
-          "International patient data — time zones, languages, insurance — wasn't surfaced in the list view",
+          "Three screens to find one patient. Filters didn't cross locations.",
+          "Pending labs and overdue follow-ups looked identical to healthy patients in the list. No triage signals.",
+          "Language, timezone, insurance — buried in a notes field nobody read.",
         ],
         impact: [
-          "Single unified directory gave staff instant search and filter across 2,500+ patients in 30+ countries",
-          "Status badges and priority flags helped front desk triage patients at a glance instead of digging through files",
-          "Inline international patient indicators reduced scheduling errors caused by timezone mismatches",
+          "Search and filter across all patients and locations. Under a second.",
+          "Status badges and priority flags. Front desk triaged without digging through files.",
+          "International details surfaced in the row. Fewer errors, fewer confused patients.",
         ],
       },
       {
         image: "/Healthcare Dashboard/Patients edit.png",
         label: "Patients Edit",
         need: [
-          "Editing a patient record meant jumping to a separate system, breaking staff flow and doubling data entry",
-          "No validation on critical fields like phone numbers and emails led to bounced reminders and missed follow-ups",
-          "Audit trail was nonexistent — staff couldn't see who changed what or when on a patient profile",
+          "Editing a record meant switching systems. Same data, typed twice.",
+          "Mistyped phone number. Bounced reminder. Patient never heard back.",
+          "Nurse changed a dosage. Doctor couldn't tell if it was a mistake or intentional.",
         ],
         impact: [
-          "Inline editing within the same dashboard kept staff in flow and cut data entry time in half",
-          "Field-level validation eliminated bounced patient communications caused by malformed contact data",
-          "Full edit audit trail gave clinic admins visibility into every change for compliance and accountability",
+          "Inline editing. No second system. No double entry.",
+          "Validation on input. Bounced reminders near zero.",
+          "Every change logged — who, what, when. Compliance without IT tickets.",
         ],
       },
       {
         image: "/Healthcare Dashboard/Admin Staff Page.png",
         label: "Admin Staff",
         need: [
-          "Enterprise clients each needed a branded experience — a one-size-fits-all dashboard wouldn't close deals",
-          "Onboarding a new white-label client required weeks of custom UI development per deployment",
-          "Each client had unique configurations for staff roles, doctor directories, and hospital networks",
+          "Enterprise buyers asked: can we brand this as ours? Generic dashboard lost deals.",
+          "Each white-label client: weeks of custom UI. Sales couldn't promise delivery dates.",
+          "Hardcoded configs for staff roles, doctors, hospitals. Didn't scale past two clients.",
         ],
         impact: [
-          "White-labeling strategy cut enterprise onboarding from weeks to days across multiple geographies",
-          "Modular component architecture reduced per-client UI customization effort by 50%",
-          "Multi-tenant admin portal managed staff, doctors, and hospitals under a single configurable system",
+          "White-label theming. Same codebase, different brand. Weeks to days.",
+          "Component library halved per-client effort. Sales hit their delivery promises.",
+          "One portal. Multi-tenant. Configurable per client without touching code.",
         ],
       },
       {
         image: "/Healthcare Dashboard/Our Doctors.png",
         label: "Our Doctors",
         need: [
-          "Doctor-directory data was scattered across spreadsheets with no centralized way to manage credentials, departments, and branch assignments",
-          "Patients couldn't find specialists by department or location — they called the front desk for basic lookups",
-          "No way to track doctor availability across branches, causing double-bookings and frustrated walk-ins",
+          "Doctor info in spreadsheets. Credentials, departments, branches — each in a different file.",
+          "Patient wants a dermatologist at Downtown. Calls front desk. Front desk calls around.",
+          "Doctor worked at two branches. Nobody tracked which days. Double-bookings, weekly.",
         ],
         impact: [
-          "Centralized doctor directory with department, branch, and contact data accessible from a single screen",
-          "Patients could self-serve specialist lookups by department, reducing front-desk call volume",
-          "Branch-aware doctor assignments eliminated scheduling conflicts across multi-location clinics",
+          "One directory. Every doctor, department, branch. Searchable.",
+          "Patients self-served specialist lookups. Front desk calls dropped.",
+          "Branch-aware scheduling. Conflicts stopped.",
         ],
       },
       {
         image: "/Healthcare Dashboard/Special Offers.png",
         label: "Special Offers",
         need: [
-          "Clinics had no way to push targeted health offers or campaigns to specific patient segments",
-          "Patient retention was purely reactive — no proactive outreach for follow-ups or preventive care",
-          "Special offers and health programs weren't reaching the right patients at the right time",
+          "Health camps announced via posters in the waiting room. No way to reach the right patients.",
+          "Patients came once, never returned. No follow-up nudges.",
+          "Diabetes campaign blasted to everyone. Non-diabetics deleted it. Diabetics never saw it.",
         ],
         impact: [
-          "Targeted offer engine enabled clinics to run data-driven patient engagement campaigns",
-          "Proactive health reminders improved patient retention and follow-up visit adherence",
-          "Segmented outreach ensured relevant offers reached the right patient demographics",
+          "Segmented by diagnosis, age, visit history. Offers hit the right patients.",
+          "Automated follow-ups. Retention climbed. Staff didn't lift a finger.",
+          "Right patient, right offer, right time.",
         ],
       },
     ],
@@ -241,7 +241,7 @@ export default function Portfolio() {
                       {p.title}
                     </span>
                     <span className="text-[10px] text-text-muted">
-                      {p.tags.length} slides
+                      {p.slides.length} slides
                     </span>
                   </div>
                   <p className="text-xs text-text-muted mt-0.5 line-clamp-1">

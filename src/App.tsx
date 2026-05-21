@@ -212,9 +212,8 @@ export default function App() {
                 About
               </h2>
               <p className="text-text-secondary text-xs sm:text-sm md:text-sm leading-relaxed">
-                A technical founder who thrives where code meets business. I've
-                shipped products to 10k+ users across healthcare and edtech —
-                now I'm building what's next at{" "}
+                I build products and run a small studio. Shipped to 10k+ users
+                across healthcare and edtech. Currently working on new things at{" "}
                 <a
                   href="https://www.nivyaan.com"
                   target="_blank"
@@ -223,8 +222,9 @@ export default function App() {
                 >
                   Nivyaan Labs
                 </a>
-                . I think in systems, ship fast, and believe the best products
-                are built by people who care deeply.
+                . I like systems that hold up under real use, shipping early, and
+                saying no to features that sound good on a roadmap but flop in
+                front of users.
               </p>
             </div>
 
