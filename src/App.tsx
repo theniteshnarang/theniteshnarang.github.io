@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import {
-  Github,
+  // Github,
   Linkedin,
   Mail,
-  Twitter,
+  // Twitter,
   MessageCircle,
   FileText,
   Briefcase,
@@ -48,9 +48,7 @@ const BUSINESS_SKILLS = [
 const INDUSTRIES = ["Healthcare", "EdTech", "SaaS"];
 
 const SOCIALS = [
-  { href: LINKS.github, icon: Github, label: "GitHub" },
   { href: LINKS.linkedin, icon: Linkedin, label: "LinkedIn" },
-  { href: LINKS.twitter, icon: Twitter, label: "Twitter" },
   { href: `mailto:${LINKS.email}`, icon: Mail, label: "Email" },
   { href: LINKS.whatsapp, icon: MessageCircle, label: "WhatsApp" },
   { href: LINKS.resume, icon: FileText, label: "Resume" },
@@ -182,8 +180,8 @@ export default function App() {
 
             {/* Stats — desktop only, top-right */}
             <div className="hidden md:flex gap-6 sm:gap-8 md:pt-2">
-              <StatItem value={5} label="Years" />
-              <StatItem value={10} label="Products" />
+              <StatItem value={4} label="Years" />
+              <StatItem value={5} label="Products" />
             </div>
           </section>
           {/* Socials / Navbar Section */}
@@ -222,9 +220,9 @@ export default function App() {
                 >
                   Nivyaan Labs
                 </a>
-                . I like systems that hold up under real use, shipping early, and
-                saying no to features that sound good on a roadmap but flop in
-                front of users.
+                . I like systems that hold up under real use, shipping early,
+                and saying no to features that sound good on a roadmap but flop
+                in front of users.
               </p>
             </div>
 
