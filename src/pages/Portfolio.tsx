@@ -18,7 +18,7 @@ const PROJECTS: Project[] = [
   {
     title: "Healthcare Dashboard",
     description:
-      "Healthcare management platform used by 2,500+ patients across countries. I designed the UI and built the white-label system that helped close enterprise deals.",
+      "Healthcare management platform used by 2,500+ patients across countries. I developed the UI and built the white-label system that helped close enterprise deals.",
     tags: ["React", "TypeScript", "Next.js", "Tailwind CSS"],
     slides: [
       {
