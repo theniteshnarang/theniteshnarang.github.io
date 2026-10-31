@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, Linkedin, Link2, Download } from "lucide-react";
 
 const LINKS = {
   email: "nitesh@nivyaan.com",
-  phone: "9106857146",
+  phone: "+91 91068 57146",
   phoneHref: "tel:+919106857146",
   location: "Ahmedabad, India",
   linkedin: "https://linkedin.com/in/theniteshnarang",
