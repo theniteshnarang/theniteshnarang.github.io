@@ -135,7 +135,7 @@ const EDUCATION = [
     degree: "Higher Secondary (CBSE)",
     school: "Airport School",
     href: "https://www.airportschoolahm.in/",
-    period: "2015",
+    period: "2013 – 2015",
     location: "Ahmedabad, India",
   },
 ];
