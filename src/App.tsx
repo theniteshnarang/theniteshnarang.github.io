@@ -132,8 +132,8 @@ const EDUCATION = [
     location: "Vadodara, India",
   },
   {
-    degree: "HSC CBSE Board",
-    school: "Airport School Ahmedabad",
+    degree: "Higher Secondary (CBSE)",
+    school: "Airport School",
     href: "https://www.airportschoolahm.in/",
     period: "2015",
     location: "Ahmedabad, India",
