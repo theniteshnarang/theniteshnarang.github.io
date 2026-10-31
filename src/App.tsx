@@ -86,8 +86,8 @@ const EXPERIENCE: Experience[] = [
     role: "Application Engineering Intern",
     period: "11/2020 – 03/2021",
     bullets: [
-      "Built wishlist and cart modules, contributing directly to user engagement.",
-      "Optimized dynamic product pages, boosting page views by 30%.",
+      "Owned the build of the wishlist and cart modules, the core of the platform's shopping flow.",
+      "Rebuilt dynamic product pages in React, replacing a Python-based web framework, improving UX and lifting page views by 30%.",
     ],
   },
 ];
