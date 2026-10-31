@@ -1,73 +1,39 @@
-# React + TypeScript + Vite
+# theniteshnarang.github.io
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal site of Nitesh Narang: a resume-style, single-page portfolio that renders in the browser and doubles as the source of truth for the downloadable résumé PDF.
 
-Currently, two official plugins are available:
+**Live:** https://theniteshnarang.github.io
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Stack
 
-## React Compiler
+- [React 19](https://react.dev) + TypeScript
+- [Vite 7](https://vite.dev) (SWC plugin)
+- [Tailwind CSS v4](https://tailwindcss.com)
+- [lucide-react](https://lucide.dev) icons
+- [Noto Sans](https://fonts.google.com/noto/specimen/Noto+Sans) webfont
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## Scripts
 
-## Expanding the ESLint configuration
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Local dev server |
+| `npm run build` | Type-check and build into `dist/` |
+| `npm run lint` | ESLint |
+| `npm run pdf` | Regenerate `dist/nitesh-resume.pdf` from the built site |
+| `npm run deploy` | Build + generate PDF + publish `dist/` to the `gh-pages` branch |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## How the PDF works
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+The website is the single source of truth for the résumé. At deploy time,
+`scripts/generate-pdf.mjs`:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. Serves the freshly built `dist/` folder via Vite preview.
+2. Renders it in headless Chromium (Puppeteer) with the print stylesheet
+   (`@media print` rules in `src/index.css` emulate the résumé's geometry).
+3. Binary-searches the largest page scale that still fits a single A4 page
+   (verified against the real artifact with `pdfinfo`), so content fills the
+   page with minimal bottom whitespace.
+4. Writes `dist/nitesh-resume.pdf`, which the site's "Download PDF" link serves.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+So résumé edits happen in `src/App.tsx` (experience, skills, education data),
+and both the site and the PDF update together on the next deploy.
