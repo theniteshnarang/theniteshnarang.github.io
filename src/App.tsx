@@ -28,9 +28,9 @@ const EXPERIENCE: Experience[] = [
     role: "Technical Founder",
     period: "10/2025 – Present",
     bullets: [
-      "Did deep user research to explore building our own product, and learned the hard way that shipping beats researching.",
-      "Leading end-to-end product development engagements, spanning discovery, architecture, design, and delivery.",
-      "Bringing together engineering depth and product thinking to build scalable, user-focused solutions for clients.",
+      "Ran deep user research to explore building our own product, and learned the hard way that shipping beats over-researching.",
+      "Led an engagement to automate drafting for advocates, from discovery to delivery, before deciding to postpone the product due to unclear ROI.",
+      "Deep enough in the tech to see bottlenecks early, close enough to users to find the right solution, building products that matter in the market.",
     ],
   },
   {
@@ -41,9 +41,9 @@ const EXPERIENCE: Experience[] = [
     contract: true,
     period: "03/2025 – 09/2025",
     bullets: [
-      "Owned the healthcare panel, from scoping to delivery, serving 2500+ patients across countries.",
+      "Owned the healthcare panel, from scoping to delivery, serving 2,500+ patients.",
       "Drove white-labeling strategy, enabling faster enterprise client onboarding across multiple geographies.",
-      "Cut UI development time by 50% through modular architecture, directly accelerating the sales cycle for new white-label clients.",
+      "Cut UI development time by 50% through modular architecture, accelerating feature development across the platform.",
     ],
   },
   {
@@ -53,9 +53,9 @@ const EXPERIENCE: Experience[] = [
     contract: true,
     period: "10/2024 – 02/2025",
     bullets: [
-      "Owned the build of SaaS email outreach modules used by 500+ users at launch day.",
+      "Owned the build of SaaS email outreach modules used by 500+ users on launch day.",
       "Engineered secure Gmail consent and authentication flows, reducing onboarding friction for new users.",
-      "Designed and shipped Campaign REST APIs, enabling seamless integration with the frontend.",
+      "Designed and shipped Campaign REST APIs the frontend consumed from day one.",
     ],
   },
   {
@@ -76,18 +76,18 @@ const EXPERIENCE: Experience[] = [
     role: "Teaching Assistant",
     period: "02/2021 – 08/2021",
     bullets: [
-      "Managed a 17-person cohort, owning delivery pipeline and improving throughput by 10%.",
+      "Managed a 17-person cohort, owning the delivery pipeline and improving throughput by 10%.",
     ],
   },
   {
     company: "OpenEducat",
     fmr: "Tech Receptives",
     href: "https://www.openeducat.org/",
-    role: "Intern Application Engr.",
+    role: "Application Engineering Intern",
     period: "11/2020 – 03/2021",
     bullets: [
       "Built wishlist and cart modules, contributing directly to user engagement.",
-      "Optimised dynamic product pages, boosting page views by 30%.",
+      "Optimized dynamic product pages, boosting page views by 30%.",
     ],
   },
 ];
@@ -125,14 +125,14 @@ const SKILLS = [
 
 const EDUCATION = [
   {
-    degree: "B'Tech in Computer Science & Engineering,",
+    degree: "B.Tech in Computer Science & Engineering",
     school: "Parul University",
     href: "https://paruluniversity.ac.in/",
     period: "2015 – 2019",
     location: "Vadodara, India",
   },
   {
-    degree: "HSC CBSE Board,",
+    degree: "HSC CBSE Board",
     school: "Airport School Ahmedabad",
     href: "https://www.airportschoolahm.in/",
     period: "2015",
@@ -180,10 +180,19 @@ function Reveal({
    deploy time by scripts/generate-pdf.mjs — the website stays the single
    source of truth. */
 
-function SectionHeading({ children }: { children: ReactNode }) {
+function SectionHeading({
+  children,
+  id,
+}: {
+  children: ReactNode;
+  id?: string;
+}) {
   return (
     <div className="print-keep border-b-2 border-teal pb-1.5">
-      <h2 className="text-[16px] font-bold uppercase tracking-[0.05em] text-teal">
+      <h2
+        id={id}
+        className="text-[16px] font-bold uppercase tracking-[0.05em] text-teal"
+      >
         {children}
       </h2>
     </div>
@@ -264,7 +273,7 @@ export default function App() {
                 strokeWidth={2.2}
                 aria-hidden
               />
-              Linkedin
+              LinkedIn
             </a>
             <a
               href="./nitesh-resume.pdf"
@@ -292,7 +301,7 @@ export default function App() {
         {/* ——— Experience ——— */}
         <Reveal className="mt-8">
           <section aria-labelledby="experience-heading">
-            <SectionHeading>Experience</SectionHeading>
+            <SectionHeading id="experience-heading">Experience</SectionHeading>
             <div>
               {EXPERIENCE.map((exp) => (
                 <article key={exp.company} className="mt-4">
@@ -341,7 +350,7 @@ export default function App() {
           <div className="print-keep-grid grid gap-x-10 gap-y-10 sm:grid-cols-2">
             {/* Skill */}
             <section aria-labelledby="skill-heading">
-              <SectionHeading>Skill</SectionHeading>
+              <SectionHeading id="skill-heading">Skills</SectionHeading>
               <div className="mt-5 space-y-6">
                 {SKILLS.map((group) => (
                   <div key={group.label} className="print-keep">
@@ -370,7 +379,7 @@ export default function App() {
 
             {/* Education */}
             <section aria-labelledby="education-heading">
-              <SectionHeading>Education</SectionHeading>
+              <SectionHeading id="education-heading">Education</SectionHeading>
               <div className="mt-5 space-y-5">
                 {EDUCATION.map((edu) => (
                   <article key={edu.degree}>
