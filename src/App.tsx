@@ -28,8 +28,8 @@ const EXPERIENCE: Experience[] = [
     role: "Technical Founder",
     period: "10/2025 – Present",
     bullets: [
-      "Did deep user research to explore building our own product — learned the hard way that shipping beats over-researching.",
-      "Leading end-to-end product development engagements — spanning discovery, architecture, design, and delivery.",
+      "Did deep user research to explore building our own product, and learned the hard way that shipping beats researching.",
+      "Leading end-to-end product development engagements, spanning discovery, architecture, design, and delivery.",
       "Bringing together engineering depth and product thinking to build scalable, user-focused solutions for clients.",
     ],
   },
@@ -41,7 +41,7 @@ const EXPERIENCE: Experience[] = [
     contract: true,
     period: "03/2025 – 09/2025",
     bullets: [
-      "Owned the full product lifecycle of a healthcare dashboard — from scoping to delivery — serving 2500+ patients across countries.",
+      "Owned the healthcare panel, from scoping to delivery, serving 2500+ patients across countries.",
       "Drove white-labeling strategy, enabling faster enterprise client onboarding across multiple geographies.",
       "Cut UI development time by 50% through modular architecture, directly accelerating the sales cycle for new white-label clients.",
     ],
@@ -53,9 +53,9 @@ const EXPERIENCE: Experience[] = [
     contract: true,
     period: "10/2024 – 02/2025",
     bullets: [
-      "Owned the build of SaaS email outreach modules used by 500+ users from day one.",
+      "Owned the build of SaaS email outreach modules used by 500+ users at launch day.",
       "Engineered secure Gmail consent and authentication flows, reducing onboarding friction for new users.",
-      "Designed and shipped Campaign REST APIs, cutting manual client setup time by 50%.",
+      "Designed and shipped Campaign REST APIs, enabling seamless integration with the frontend.",
     ],
   },
   {
@@ -66,7 +66,7 @@ const EXPERIENCE: Experience[] = [
     bullets: [
       "Owned the frontend for App 2.0 (10k+ users) and the Admin Dashboard serving 100+ enterprise clients.",
       "Independently architected and shipped Diagnostic & Reimbursement modules with zero post-launch regressions.",
-      "Automated endorsement and order workflows, improving operational speed by 25–30% and freeing team bandwidth.",
+      "Automated endorsement and order workflows, improving operational speed by 25% and freeing team bandwidth.",
       "Integrated health SDKs, improving analytics accuracy by 20% and directly informing product decisions.",
     ],
   },
@@ -167,7 +167,10 @@ function Reveal({
   }, []);
 
   return (
-    <div ref={ref} className={`reveal ${shown ? "reveal-shown" : ""} ${className}`}>
+    <div
+      ref={ref}
+      className={`reveal ${shown ? "reveal-shown" : ""} ${className}`}
+    >
       {children}
     </div>
   );
@@ -224,18 +227,30 @@ export default function App() {
               href={`mailto:${LINKS.email}`}
               className="inline-flex items-center gap-2 transition-colors duration-150 hover:text-teal"
             >
-              <Mail className="size-[15px] text-teal" strokeWidth={2.2} aria-hidden />
+              <Mail
+                className="size-[15px] text-teal"
+                strokeWidth={2.2}
+                aria-hidden
+              />
               {LINKS.email}
             </a>
             <a
               href={LINKS.phoneHref}
               className="inline-flex items-center gap-2 transition-colors duration-150 hover:text-teal"
             >
-              <Phone className="size-[15px] text-teal" strokeWidth={2.2} aria-hidden />
+              <Phone
+                className="size-[15px] text-teal"
+                strokeWidth={2.2}
+                aria-hidden
+              />
               {LINKS.phone}
             </a>
             <span className="inline-flex items-center gap-2">
-              <MapPin className="size-[15px] text-teal" strokeWidth={2.2} aria-hidden />
+              <MapPin
+                className="size-[15px] text-teal"
+                strokeWidth={2.2}
+                aria-hidden
+              />
               {LINKS.location}
             </span>
             <a
@@ -244,7 +259,11 @@ export default function App() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 transition-colors duration-150 hover:text-teal"
             >
-              <Linkedin className="size-[15px] text-teal" strokeWidth={2.2} aria-hidden />
+              <Linkedin
+                className="size-[15px] text-teal"
+                strokeWidth={2.2}
+                aria-hidden
+              />
               Linkedin
             </a>
             <a
@@ -252,7 +271,11 @@ export default function App() {
               download
               className="print-hidden inline-flex items-center gap-2 transition-colors duration-150 hover:text-teal"
             >
-              <Download className="size-[15px] text-teal" strokeWidth={2.2} aria-hidden />
+              <Download
+                className="size-[15px] text-teal"
+                strokeWidth={2.2}
+                aria-hidden
+              />
               Download PDF
             </a>
           </nav>
@@ -263,7 +286,7 @@ export default function App() {
         {/* ——— Profile line ——— */}
         <p className="profile-line mt-8 text-[15.5px] leading-relaxed text-ink">
           I've shipped products used by 10k+ users. Now I want to know why they
-          stayed — and what made them pay.
+          stayed, and what made them pay.
         </p>
 
         {/* ——— Experience ——— */}
