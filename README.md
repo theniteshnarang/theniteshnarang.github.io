@@ -21,6 +21,7 @@ Personal site of Nitesh Narang: a resume-style, single-page portfolio that rende
 | `npm run lint` | ESLint |
 | `npm run pdf` | Regenerate `dist/nitesh-resume.pdf` from the built site |
 | `npm run og` | Regenerate `public/og-image.png` (1200×630 link-preview card) |
+| `npm run favicon` | Regenerate `public/apple-touch-icon.png` (180×180 iOS icon) |
 | `npm run deploy` | Build + generate PDF + publish `dist/` to the `gh-pages` branch |
 
 ## How the PDF works
