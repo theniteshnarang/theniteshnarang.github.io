@@ -405,7 +405,13 @@ export default function App() {
         {/* ——— Footer (web only, kept quiet so the document stays honest) ——— */}
         <footer className="print-hidden mt-12 border-t border-rule-soft pt-4 pb-10">
           <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2 text-[12.5px] text-[#767676]">
-            <p>Updated · Oct 2026</p>
+            <p>
+              Updated ·{" "}
+              {new Intl.DateTimeFormat("en-US", {
+                month: "short",
+                year: "numeric",
+              }).format(new Date(__BUILD_DATE__))}
+            </p>
             <div className="flex items-center gap-5">
               <a
                 href="./nitesh-resume.pdf"
